@@ -47,7 +47,11 @@ const appRouter = createBrowserRouter([
           {
             path: "settings/editprofile",
             element: <Mainsetting />
-          }
+          },
+          {
+            path: "dashboard/register",
+            element: <Signup />,
+          },
         ],
       },
       {
@@ -58,10 +62,7 @@ const appRouter = createBrowserRouter([
         path: "/otpvarification",
         element: <Register />,
       },
-      {
-        path: "/register",
-        element: <Signup />,
-      },
+      
     ],
   },
 ]);

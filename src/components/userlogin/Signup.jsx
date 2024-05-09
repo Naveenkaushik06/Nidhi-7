@@ -19,7 +19,7 @@ const Signup = () => {
   };
   return (
     <div className=" h-screen w-screen  bg-blue-500 text-white m-auto flex flex-col gap-2  px-5 place-items-center bg-gradient-to-r from-blue-900 to-indigo-300 shadow-xl">
-      <h1 className="text-center text-3xl mt-4 px-3 font-mono tracking-wider">
+      <h1 className="flex justify-center text-center text-2xl mt-4 px-3 font-mono tracking-wider">
         Welcome to <span className="font-semibold">Nidhi Bank</span>
       </h1>
       <p className="text-center p-3 text-4xl font-semibold tracking-wider opacity-80">
