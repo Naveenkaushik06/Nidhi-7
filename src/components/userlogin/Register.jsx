@@ -18,7 +18,7 @@ const Register = () => {
     }
   };
   return (
-    <form className=" h-2/4 w-2/4 border text-white m-auto flex flex-col gap-10 rounded-xl px-5 py-6 place-items-center bg-gradient-to-r from-blue-900 to-indigo-300 shadow-xl">
+    <form className=" ml-52l h-2/4 w-2/4 border text-white m-auto flex flex-col gap-10 rounded-xl px-5 py-6 place-items-center bg-gradient-to-r from-blue-900 to-indigo-300 shadow-xl">
       <h1 className="text-center text-2xl mt-5 p-3 font-mono tracking-wider">
         Welcome to <span className="font-semibold">Nidhi Bank</span>
       </h1>

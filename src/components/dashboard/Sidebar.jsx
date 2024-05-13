@@ -31,7 +31,7 @@ const Sidebar = () => {
                   <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                <span className="flex-1 tracking-wider text-lg ms-6 whitespace-nowrap">
+                <span className="flex-1  font-mono font-bold text-lg ms-6 whitespace-nowrap">
                   Dashboard
                 </span>
               </Link>
@@ -59,7 +59,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className=" flex-1 tracking-wider ms-6 text-lg whitespace-nowrap ">
+                <span className=" flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap ">
                   Transactions
                 </span>
               </Link>
@@ -86,7 +86,7 @@ const Sidebar = () => {
                     d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                   />
                 </svg>
-                <span className="whitespace-nowrap flex-1 tracking-wider ms-6 text-lg">
+                <span className="whitespace-nowrap flex-1  font-mono font-bold ms-6 text-lg">
                   Accounts
                 </span>
               </Link>
@@ -114,7 +114,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 tracking-wider ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap">
                   Investments
                 </span>
               </Link>
@@ -142,7 +142,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 tracking-wider ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap">
                   Credit Cards
                 </span>
               </Link>
@@ -168,7 +168,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1 ms-6 text-lg  font-mono font-bold whitespace-nowrap">
                   Loans
                 </span>
               </Link>
@@ -196,7 +196,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 ms-6  tracking-wider text-lg whitespace-nowrap">
+                <span className="flex-1 ms-6   font-mono font-bold text-lg whitespace-nowrap">
                   Services
                 </span>
               </Link>
@@ -224,7 +224,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 tracking-wider  ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1  font-mono font-bold  ms-6 text-lg whitespace-nowrap">
                   MyPriviliges
                 </span>
               </Link>
@@ -259,7 +259,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 tracking-wider ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap">
                   Settings
                 </span>
               </Link>

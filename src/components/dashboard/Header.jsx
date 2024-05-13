@@ -107,8 +107,8 @@ const Header = () => {
                   </svg>
                 </Link>
               </div>
-              <div className="p-2 font-semibold hover:text-white bg-blue-500 border-black rounded-xl">
-                <Link to="/dashboard/register">Add Agent</Link>
+              <div className="p-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
+                <Link to="/registerform">Add Agent</Link>
               </div>
               <div className="px-4">
                 <svg

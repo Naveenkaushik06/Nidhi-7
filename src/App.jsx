@@ -10,6 +10,11 @@ import PrivateRoutes from "./components/privateroute/PrivateRoutes";
 import Dashboard from "./components/dashboard/Dashboard";
 import Dashboard2 from "./components/dashboard/Dashboard2"
 import Mainsetting from "./components/settingss/Mainsetting";
+import Transaction from "./components/dashboard/Transaction";
+import RegisterForm from "./components/agent/RegisterForm";
+import LoginForm from "./components/agent/LoginForm";
+import ForgetForm from "./components/userlogin/ForgetForm";
+
 
 function AppLayout() {
   return (
@@ -33,6 +38,10 @@ const appRouter = createBrowserRouter([
         element: <PrivateRoutes />,
       },
       {
+        path: "/loginform",
+        element: <LoginForm />,
+      },
+      {
         path: "/*",
         element: <PrivateRoutes />,
         children: [
@@ -42,15 +51,23 @@ const appRouter = createBrowserRouter([
           },
           {
             path: "transactions",
-            element: <Dashboard2 />
+            element: <Transaction />
+          },
+          {
+            path: "creditcards",
+            element: <Register />
+          },
+          {
+            path: "investments",
+            element: <Signup />
           },
           {
             path: "settings/editprofile",
             element: <Mainsetting />
           },
           {
-            path: "dashboard/register",
-            element: <Signup />,
+            path: "registerform",
+            element: <RegisterForm />,
           },
         ],
       },
@@ -61,6 +78,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/otpvarification",
         element: <Register />,
+      },
+      {
+        path: "/forgetform",
+        element: <ForgetForm />,
       },
       
     ],
