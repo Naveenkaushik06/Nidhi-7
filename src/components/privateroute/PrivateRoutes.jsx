@@ -10,8 +10,10 @@ const PrivateRoutes = () => {
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  
   const [usernameOrEmailOrPhoneNumber, setUsername] = useState("");
   const [password, setPassword] = useState("");
+ 
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -33,6 +35,8 @@ const PrivateRoutes = () => {
     usernameOrEmailOrPhoneNumber,
     password,
   };
+  console.log(adminInfo);
+  
   // http://localhost:8080/admin/login-admin
   const handleLogin = async () => {
     try {
@@ -44,7 +48,7 @@ const PrivateRoutes = () => {
       setIsAuthenticated(true);
       navigate("/dashboard");
     } catch (error) {
-      console.error("Login failed:", error);
+      console.error("Admin Login failed:", error);
       setError("Invalid username or password");
     }
   };

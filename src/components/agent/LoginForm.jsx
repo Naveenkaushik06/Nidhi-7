@@ -1,7 +1,36 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginForm() {
+
+  const [usernameOrEmailOrPhoneNumber, setUsername]=useState("");
+  const [password, setPassword]=useState("");
+  const [error, setError]=useState("");
+  const navigate = useNavigate();
+
+  const agentLoginInfo = {
+    usernameOrEmailOrPhoneNumber,
+    password
+  }
+  console.log(agentLoginInfo);
+
+  
+  const handleAgentLogin = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/home/signin",
+        agentLoginInfo
+      );
+      console.log(response.data);
+      // setIsAuthenticated(true);
+      // navigate("/dashboard");  //agentDashboard required page...
+    } catch (error) {
+      console.error("Agent Login failed:", error);
+      setError("Invalid username or password");
+    }
+  };
+
   return (
     <div>
       <div className="h-screen md:flex">
@@ -13,10 +42,10 @@ function LoginForm() {
             </h1>
             <p className="text-white font-mono font-bold mt-1">The most popular Banking system !</p>
             <button
-              type="submit"
+              type="button"
               className="block w-28 bg-white text-indigo-800 mt-4 py-2 rounded-2xl font-bold font-mono mb-2"
             >
-              <Link to="">Read More </Link>
+              <Link to="#">Read More </Link>
             </button>
           </div>
           <div className="absolute -bottom-32 -left-40 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
@@ -30,7 +59,7 @@ function LoginForm() {
               Hello Agent! login here
             </h1>
             
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+            {/* <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-gray-400"
@@ -50,7 +79,8 @@ function LoginForm() {
                 id=""
                 placeholder="Full name"
               />
-            </div>
+            </div> */}
+
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -67,6 +97,8 @@ function LoginForm() {
                 />
               </svg>
               <input
+              value={usernameOrEmailOrPhoneNumber}
+              onChange={(e)=>setUsername(e.target.value)}
                 className="pl-2 outline-none border-none font-mono "
                 type="text"
                 name=""
@@ -74,7 +106,8 @@ function LoginForm() {
                 placeholder="Username"
               />
             </div>
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+
+            {/* <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-gray-400"
@@ -91,12 +124,13 @@ function LoginForm() {
               </svg>
               <input
                 className="pl-2 outline-none border-none font-mono "
-                type="text"
+                type="email"
                 name=""
                 id=""
                 placeholder="Email Address"
               />
-            </div>
+            </div> */}
+
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -111,6 +145,8 @@ function LoginForm() {
                 />
               </svg>
               <input
+              value={password}
+              onChange={(e)=>setPassword(e.target.value)}
                 className="pl-2 outline-none border-none font-mono "
                 type="text"
                 name=""
@@ -118,6 +154,7 @@ function LoginForm() {
                 placeholder="Password"
               />
             </div>
+
             <div className="flex items-center  py-2 mt-1 px-3 rounded-2xl">
               <div className="flex items-center h-5">
                 <input
@@ -143,8 +180,10 @@ function LoginForm() {
                 </label>
               </div>
             </div>
+
             <button
-              type="submit"
+            onClick={handleAgentLogin}
+              type="button"
               className="block w-full font-mono font-bold bg-indigo-600 mt-4 py-2 rounded-2xl text-white  mb-2"
             >
               Login
@@ -153,6 +192,7 @@ function LoginForm() {
               <Link to="/forgetform">Forgot Password ?</Link>
             </span>
           </form>
+          {error && <p>{error}</p>}
         </div>
       </div>
     </div>
