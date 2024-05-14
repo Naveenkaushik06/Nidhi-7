@@ -18,9 +18,9 @@ const Signup = () => {
     }
   };
   return (
-    <div className=" h-screen w-screen  bg-blue-500 text-white m-auto flex flex-col gap-2  px-5 place-items-center bg-gradient-to-r from-blue-900 to-indigo-300 shadow-xl">
-      <h1 className="flex justify-center text-center text-2xl mt-4 px-3 font-mono tracking-wider">
-        Welcome to <span className="font-semibold">Nidhi Bank</span>
+    <div className=" h-auto w-5/6 p-5 bg-blue-500 text-white flex flex-col gap-1 ml-56 mt-20 bg-gradient-to-r from-blue-900 to-indigo-300 shadow-xl">
+      <h1 className="flex justify-center gap-2 text-center text-2xl mt-4 px-3 font-mono tracking-wider">
+        Welcome to <span className="font-extrabold text-2xl font-serif">Nidhi Bank</span>
       </h1>
       <p className="text-center p-3 text-4xl font-semibold tracking-wider opacity-80">
         Register
@@ -55,6 +55,25 @@ const Signup = () => {
               className="w-full text-black px-4 py-2 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1 tracking-widest"
             />
           </div>
+        </div>
+        {/* User input */}
+        <div className="flex flex-col w-4/5">
+          <label
+            htmlFor=""
+            className="font-sarif 
+                    py-1"
+          >
+            user name
+          </label>
+          <input
+            type="text"
+            placeholder="enter-name"
+            className="w-full text-black px-4 py-2 
+                    text-base border border-gray-300 rounded 
+                    outline-none focus:ring-blue-500 
+                    focus:border-blue-500 focus:ring-1 
+                    tracking-widest"
+          />
         </div>
         {/* 3rd Input  */}
         <div className="flex flex-col w-4/5">

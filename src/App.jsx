@@ -1,15 +1,18 @@
 import React from "react";
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import LoginBtn from "./components/portallogin/LoginBtn";
-// import AdminLogin from "./components/portallogin/AdminLogin";
 import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Signup from "./components/userlogin/Signup";
-// import Loans from "./components/loans/Loans";
+import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
 import Dashboard from "./components/dashboard/Dashboard";
-// import Dashboard2 from "./components/dashboard/Dashboard2"
 import Mainsetting from "./components/settingss/Mainsetting";
+import Transactions from "./components/Transactions/Transactions"
+import LoanCalculator from "./components/dashboard/LoanCalculator/LoanCalculator";
+
+
+
 
 function AppLayout() {
   return (
@@ -32,6 +35,7 @@ const appRouter = createBrowserRouter([
         path: "/login",
         element: <PrivateRoutes />,
       },
+      // Children within children
       {
         path: "/*",
         element: <PrivateRoutes />,
@@ -47,6 +51,18 @@ const appRouter = createBrowserRouter([
           {
             path: "dashboard/register",
             element: <Signup />,
+          },
+          {
+            path: "loans",
+            element: <Loans />
+          },
+          {
+            path: "transactions",
+            element: <Transactions />
+          },
+          {
+            path: "calculator",
+            element: <LoanCalculator />
           },
         ],
       },

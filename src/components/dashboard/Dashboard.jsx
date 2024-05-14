@@ -23,7 +23,7 @@ const Dashboard = () => {
         <PieChart />
       </div>
 
-      <div className="">
+      <div >
         <Transfer />
       </div>
 

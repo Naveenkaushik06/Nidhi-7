@@ -13,7 +13,7 @@ const PrivateRoutesComponent = ({isAuthenticated,onLogout}) => {
       <Outlet />
     </div>
   );
-}
+};
 
 export default PrivateRoutesComponent;
 
