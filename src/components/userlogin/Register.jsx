@@ -23,11 +23,9 @@ const Register = () => {
         Welcome to <span className="font-semibold">Nidhi Bank</span>
       </h1>
       <p className="text-center p-3 text-4xl font-semibold tracking-wider opacity-80">
-        
         Enter verification code
       </p>
       <label htmlFor="" className="font-sarif py-1">
-      
         check your register email and fill correct otp inside box{" "}
       </label>
 

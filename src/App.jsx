@@ -5,7 +5,7 @@ import LoginBtn from "./components/portallogin/LoginBtn";
 import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Signup from "./components/userlogin/Signup";
-import Loans from "./components/loans/Loans";
+// import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
 import Dashboard from "./components/dashboard/Dashboard";
 import Dashboard2 from "./components/dashboard/Dashboard2"
@@ -14,6 +14,10 @@ import Transaction from "./components/dashboard/Transaction";
 import RegisterForm from "./components/agent/RegisterForm";
 import LoginForm from "./components/agent/LoginForm";
 import ForgetForm from "./components/userlogin/ForgetForm";
+// import Agentlogin from "./components/agent/Agentlogin";
+import Agentsidebar from "./components/agent/Agentsidebar";
+import Agentdashboard from "./components/agent/Agentdashboard";
+
 
 
 function AppLayout() {
@@ -57,9 +61,14 @@ const appRouter = createBrowserRouter([
             path: "creditcards",
             element: <Register />
           },
+          // {
+          //   path: "services",
+          //   element: <Agentlogin/>
+          // },
+          
           {
-            path: "investments",
-            element: <Signup />
+            path: "mypriviliges",
+            element: <Agentsidebar/>
           },
           {
             path: "settings/editprofile",
@@ -82,6 +91,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/forgetform",
         element: <ForgetForm />,
+      },
+      {
+        path: "/agentdashboard",
+        element: <Agentdashboard />,
       },
       
     ],

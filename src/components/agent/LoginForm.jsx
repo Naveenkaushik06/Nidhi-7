@@ -181,13 +181,12 @@ function LoginForm() {
               </div>
             </div>
 
-            <button
-            onClick={handleAgentLogin}
               type="button"
               className="block w-full font-mono font-bold bg-indigo-600 mt-4 py-2 rounded-2xl text-white  mb-2"
             >
               Login
             </button>
+            </Link>
             <span className="text-sm ml-2 font-mono font-bold hover:text-blue-500 cursor-pointer">
               <Link to="/forgetform">Forgot Password ?</Link>
             </span>
