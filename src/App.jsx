@@ -7,9 +7,21 @@ import Signup from "./components/userlogin/Signup";
 import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
 import Dashboard from "./components/dashboard/Dashboard";
+
 import Mainsetting from "./components/settingss/Mainsetting";
-import Transactions from "./components/Transactions/Transactions"
+// import Transactions from "./components/Transactions/Transactions"
 import LoanCalculator from "./components/dashboard/LoanCalculator/LoanCalculator";
+
+import Dashboard2 from "./components/dashboard/Dashboard2"
+// import Mainsetting from "./components/settingss/Mainsetting";
+// import Transaction from "./components/dashboard/Transaction";
+import RegisterForm from "./components/agent/RegisterForm";
+import LoginForm from "./components/agent/LoginForm";
+import ForgetForm from "./components/userlogin/ForgetForm";
+// import Agentlogin from "./components/agent/Agentlogin";
+import Agentsidebar from "./components/agent/Agentsidebar";
+import Agentdashboard from "./components/agent/Agentdashboard";
+import Transaction from "./components/Transactions/Transactions";
 
 
 
@@ -37,6 +49,10 @@ const appRouter = createBrowserRouter([
       },
       // Children within children
       {
+        path: "/loginform",
+        element: <LoginForm />,
+      },
+      {
         path: "/*",
         element: <PrivateRoutes />,
         children: [
@@ -45,12 +61,29 @@ const appRouter = createBrowserRouter([
             element: <Dashboard />,
           },
           {
+            path: "transactions",
+            element: <Transaction />
+          },
+          {
+            path: "creditcards",
+            element: <Register />
+          },
+          // {
+          //   path: "services",
+          //   element: <Agentlogin/>
+          // },
+          
+          {
+            path: "mypriviliges",
+            element: <Agentsidebar/>
+          },
+          {
             path: "settings/editprofile",
             element: <Mainsetting />
           },
           {
-            path: "dashboard/register",
-            element: <Signup />,
+            path: "registerform",
+            element: <RegisterForm />,
           },
           {
             path: "loans",
@@ -73,6 +106,14 @@ const appRouter = createBrowserRouter([
       {
         path: "/otpvarification",
         element: <Register />,
+      },
+      {
+        path: "/forgetform",
+        element: <ForgetForm />,
+      },
+      {
+        path: "/agentdashboard",
+        element: <Agentdashboard />,
       },
       
     ],

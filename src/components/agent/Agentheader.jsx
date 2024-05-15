@@ -1,9 +1,15 @@
+import React from 'react'
 import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
-const Header = () => {
-  const location = useLocation();
-  const [selectedItem, setSelectedItem] = useState("Dashboard");
+
+const Agentheader = () => {
+    const location = useLocation();
+    const [selectedItem, setSelectedItem] = useState("Dashboard");
+  
+ 
+
+ 
 
   useEffect(() => {
     const pathname = location.pathname;
@@ -31,9 +37,6 @@ const Header = () => {
         break;
       case "/setting":
         setSelectedItem("Setting");
-        break;
-        case "/calculator":
-        setSelectedItem("Loan Calculator");
         break;
       default:
         setSelectedItem("DashBoard");
@@ -111,7 +114,7 @@ const Header = () => {
                 </Link>
               </div>
               <div className="p-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
-                <Link to="/registerform">Add Agent</Link>
+                <Link to="/registerform">Add User</Link>
               </div>
               <div className="px-4">
                 <svg
@@ -132,31 +135,18 @@ const Header = () => {
                   />
                 </svg>
               </div>
-              <div className="flex items-center">
-                <div className="flex items-center ms-3">
-                  <div>
-                    <button
-                      type="button"
-                      className="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
-                      aria-expanded="false"
-                      data-dropdown-toggle="dropdown-user"
-                    >
-                      <span className="sr-only">Open user menu</span>
-                      <img
-                        className="w-8 h-8 rounded-full"
-                        src="https://flowbite.com/docs/images/people/profile-picture-5.jpg"
-                        alt="user photo"
-                      />
-                    </button>
-                  </div>
-                </div>
-              </div>
+            
             </div>
           </div>
         </nav>
       </NavLink>
     </div>
-  );
-};
+  
 
-export default Header;
+
+      
+   
+  )
+}
+
+export default Agentheader
