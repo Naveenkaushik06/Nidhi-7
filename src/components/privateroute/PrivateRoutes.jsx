@@ -38,10 +38,11 @@ const PrivateRoutes = () => {
   console.log(adminInfo);
   
   // http://localhost:8080/admin/login-admin
+
   const handleLogin = async () => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/home/signin",
+        "http://localhost:8080/home/admin",
         adminInfo
       );
       console.log(response.data);
@@ -138,6 +139,21 @@ const PrivateRoutes = () => {
 };
 
 export default PrivateRoutes;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // import React, { useState } from "react";
 // import PrivateRoutesComponent from "./PrivateRoutesComponent";
