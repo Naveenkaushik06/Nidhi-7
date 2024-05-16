@@ -114,7 +114,7 @@ const Agentheader = () => {
                 </Link>
               </div>
               <div className="p-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
-                <Link to="/registerform">Add User</Link>
+                <Link to="/agentdashboard/Userresisterform">Add User</Link>
               </div>
               <div className="px-4">
                 <svg

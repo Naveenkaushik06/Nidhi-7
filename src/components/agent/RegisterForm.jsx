@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Agentheader from "./Agentheader";
+import Agentsidebar from "./Agentsidebar";
 
 const RegisterhtmlForm = () => {
 
@@ -32,7 +34,7 @@ const RegisterhtmlForm = () => {
           {
             headers: {
               // Add your authentication token or API key here
-              Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXZlZW4iLCJpYXQiOjE3MTU2NzA5NzgsImV4cCI6MTcxNTY3NDU3OH0.Eo4tzPt0YRCsMGERpJLPSWufZlmnEpEl984aTJBUK0I"}`,
+              Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXZlZW4iLCJpYXQiOjE3MTU4NDA4ODUsImV4cCI6MTcxNTg0NDQ4NX0.W1eynexz05eByl625E0KJzcCWdAa71dwZp2EsrodShE"}`,
             },
           }
         );
@@ -47,6 +49,8 @@ const RegisterhtmlForm = () => {
     
   return (
     <div>
+    <Agentheader/>
+    <Agentsidebar/>
       <div className="p-8 ml-72 mt-20 rounded border border-gray-200">
         <h1 className="font-mono font-bold text-3xl">Welcome to Nidhi Add Agent Section </h1>
 
