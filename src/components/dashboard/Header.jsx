@@ -32,6 +32,9 @@ const Header = () => {
       case "/setting":
         setSelectedItem("Setting");
         break;
+        case "/calculator":
+        setSelectedItem("Loan Calculator");
+        break;
       default:
         setSelectedItem("DashBoard");
         break;

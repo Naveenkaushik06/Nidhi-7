@@ -1,22 +1,29 @@
 import React from "react";
 import { Outlet, createBrowserRouter } from "react-router-dom";
 import LoginBtn from "./components/portallogin/LoginBtn";
-// import AdminLogin from "./components/portallogin/AdminLogin";
 import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Signup from "./components/userlogin/Signup";
-// import Loans from "./components/loans/Loans";
+import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
 import Dashboard from "./components/dashboard/Dashboard";
-import Dashboard2 from "./components/dashboard/Dashboard2"
+
 import Mainsetting from "./components/settingss/Mainsetting";
-import Transaction from "./components/dashboard/Transaction";
+// import Transactions from "./components/Transactions/Transactions"
+import LoanCalculator from "./components/dashboard/LoanCalculator/LoanCalculator";
+
+import Dashboard2 from "./components/dashboard/Dashboard2"
+// import Mainsetting from "./components/settingss/Mainsetting";
+// import Transaction from "./components/dashboard/Transaction";
 import RegisterForm from "./components/agent/RegisterForm";
 import LoginForm from "./components/agent/LoginForm";
 import ForgetForm from "./components/userlogin/ForgetForm";
 // import Agentlogin from "./components/agent/Agentlogin";
 import Agentsidebar from "./components/agent/Agentsidebar";
 import Agentdashboard from "./components/agent/Agentdashboard";
+import Transaction from "./components/Transactions/Transactions";
+import Userresisterform from "./components/agent/Userresisterform";
+
 
 
 
@@ -38,9 +45,10 @@ const appRouter = createBrowserRouter([
         element: <LoginBtn />,
       },
       {
-        path: "/login",
+        path: "login",
         element: <PrivateRoutes />,
       },
+      // Children within children
       {
         path: "/loginform",
         element: <LoginForm />,
@@ -78,6 +86,18 @@ const appRouter = createBrowserRouter([
             path: "registerform",
             element: <RegisterForm />,
           },
+          {
+            path: "loans",
+            element: <Loans />
+          },
+          {
+            path: "transactions",
+            element: <Transaction/>
+          },
+          {
+            path: "calculator",
+            element: <LoanCalculator />
+          },
         ],
       },
       {
@@ -96,6 +116,11 @@ const appRouter = createBrowserRouter([
         path: "/agentdashboard",
         element: <Agentdashboard />,
       },
+      {
+        path: "/agentdashboard/Userresisterform",
+        element: <Userresisterform/>,
+      },
+
       
     ],
   },
