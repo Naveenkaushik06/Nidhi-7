@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import { PDFDownloadLink } from "@react-pdf/renderer";
-// import TransactionPDF from "./TransactionPDF";
-TransactionPD
 
+import { PDFDownloadLink } from "@react-pdf/renderer";
+import TransactionPDF from "./TransactionPDF";
+import Sidebar from "../dashboard/Sidebar";
+import Header from "../dashboard/Header";
 
 const Transaction = () => {
   const maskAccountNumber = (accountNumber) => {
@@ -59,8 +58,8 @@ const Transaction = () => {
 
   return (
     <>
-      <Header />
-      <Sidebar />
+    <Header/>
+     <Sidebar/>
       <div style={{ height: "100vh", background: "lightgrey" }}>
         <div className="p-10 mt-20 h-auto mr-10 sm:ml-64">
           <div className=" absolute top-24 left-80 mb-1">

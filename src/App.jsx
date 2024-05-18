@@ -22,8 +22,11 @@ import ForgetForm from "./components/userlogin/ForgetForm";
 import Agentsidebar from "./components/agent/Agentsidebar";
 import Agentdashboard from "./components/agent/Agentdashboard";
 import Transaction from "./components/Transactions/Transactions";
-import Userresisterform from "./components/agent/Userresisterform";
 
+import Home from "./components/landingpage/Home";
+import Userdashboard from "./components/user/Userdashboard";
+import Userregister from "./components/agent/Userregister";
+import Userlogin from "./components/user/Userlogin";
 
 
 
@@ -42,7 +45,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <LoginBtn />,
+        element: <Home />,
       },
       {
         path: "login",
@@ -117,10 +120,19 @@ const appRouter = createBrowserRouter([
         element: <Agentdashboard />,
       },
       {
-        path: "/agentdashboard/Userresisterform",
-        element: <Userresisterform/>,
+        path: "/agentdashboard/userregister",
+        element: <Userregister/>,
+      },
+      {
+        path: "/userdashboard",
+        element: <Userdashboard/>,
+      },
+      {
+        path: "/userlogin",
+        element: <Userlogin/>,
       },
 
+     
       
     ],
   },
