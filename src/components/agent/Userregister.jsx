@@ -1,9 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Agentheader from "./Agentheader";
+import Agentsidebar from "./Agentsidebar";
 
-
-const RegisterhtmlForm = () => {
+const Userregister = () => {
 
   // const [firstName, setFirstName]=useState("");
   // const [lastName, setLastName]=useState("");
@@ -14,14 +15,14 @@ const RegisterhtmlForm = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
-  const addAgentInfo = {
+  const addUserInfo = {
     // firstName,
     // lastName,
     username,
     email,
     phoneNumber
   }
-  console.log(addAgentInfo);
+  console.log(addUserInfo);
 
     // http://localhost:8080/admin/login-admin
 
@@ -29,7 +30,7 @@ const RegisterhtmlForm = () => {
       try {
         const response = await axios.post(
           "http://localhost:8080/admin/addAgent",
-          addAgentInfo,
+          addUserInfo,
           {
             headers: {
               // Add your authentication token or API key here
@@ -48,9 +49,10 @@ const RegisterhtmlForm = () => {
     
   return (
     <div>
-  
+    <Agentheader/>
+    <Agentsidebar/>
       <div className="p-8 ml-72 mt-20 rounded border border-gray-200">
-        <h1 className="font-mono font-bold text-3xl">Welcome to Nidhi Add Agent Section </h1>
+        <h1 className="font-mono font-bold text-3xl">Welcome to Nidhi Add User Section </h1>
 
         <form>
           <div className="mt-8 grid lg:grid-cols-2 gap-4">
@@ -158,4 +160,4 @@ const RegisterhtmlForm = () => {
   );
 };
 
-export default RegisterhtmlForm;
+export default Userregister;

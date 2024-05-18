@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 
-const Agentheader = () => {
+const Userheader = () => {
     const location = useLocation();
     const [selectedItem, setSelectedItem] = useState("Dashboard");
 
@@ -109,9 +109,7 @@ const Agentheader = () => {
                   </svg>
                 </Link>
               </div>
-              <div className="p-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
-                <Link to="/agentdashboard/userregister">Add User</Link>
-              </div>
+             
               <div className="px-4">
                 <svg
                   className="w-7 bg-gray-200 rounded-full  h-7 text-red-500 dark:text-white"
@@ -145,4 +143,4 @@ const Agentheader = () => {
   )
 }
 
-export default Agentheader
+export default Userheader;

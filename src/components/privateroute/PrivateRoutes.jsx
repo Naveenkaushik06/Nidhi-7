@@ -78,7 +78,7 @@ const PrivateRoutes = () => {
         <form className="text-start h-full w-full flex flex-col  place-items-center gap-5">
           {/* input email */}
           <div className="flex flex-col w-2/4">
-            <label htmlFor="" className="font-sarif py-1">
+            <label htmlFor="" className="font-sarif font-bold text-xl py-3">
               Email or username
             </label>
             <input
@@ -91,7 +91,7 @@ const PrivateRoutes = () => {
           </div>
           {/* input Password */}
           <div className="relative text-start w-2/4 flex flex-col">
-            <label htmlFor="" className="font-sarif py-2">
+            <label htmlFor="" className="font-sarif font-bold text-xl  py-3">
               Password
             </label>
             <input
@@ -99,13 +99,13 @@ const PrivateRoutes = () => {
               value={password}
               onChange={handlePasswordChange}
               placeholder="Enter password"
-              className=" w-full text-black px-2 py-2 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1 tracking-widest"
+              className=" w-full text-black px-2 py-3 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1 tracking-widest"
             />
             {/* Eye Icon */}
             <Icon
               icon={icon}
               size={22}
-              className="absolute inset-y-0 right-0 flex px-4 pt-12 text-gray-600 cursor-pointer"
+              className="absolute inset-y-0 right-0 flex px-4 pt-16 text-gray-600 cursor-pointer"
               onClick={togglePasswordVisibility}
             />
           </div>
@@ -116,8 +116,8 @@ const PrivateRoutes = () => {
             </Link>
           </a>
 
-          <p className="text-start text-pretty w-fit ">
-            <span className="opacity-75">if you haven't already account?</span>
+          <p className="text-start text-pretty gap-5 w-fit ">
+            <span className="opacity-75 font-serif gap-3">if you haven't already account?</span>
             <Link to="/register">
               <span className="hover:underline font-medium text-lg">
                 Create account
