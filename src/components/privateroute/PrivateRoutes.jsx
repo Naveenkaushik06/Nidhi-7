@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import PrivateRoutesComponent from "./PrivateRoutesComponent";
 import { Icon } from "react-icons-kit";
 import { eye } from "react-icons-kit/feather/eye";
 import { eyeOff } from "react-icons-kit/feather/eyeOff";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios"; // Import Axios
+import { useCookies } from "react-cookie";
 
 const PrivateRoutes = () => {
+  const [cookies, setCookie] = useCookies(['adminToken']);
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  
   const [usernameOrEmailOrPhoneNumber, setUsername] = useState("");
   const [password, setPassword] = useState("");
- 
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
@@ -35,10 +35,15 @@ const PrivateRoutes = () => {
     usernameOrEmailOrPhoneNumber,
     password,
   };
-  console.log(adminInfo);
-  
-  // http://localhost:8080/admin/login-admin
 
+  const setInCookies = (name, data) => {
+    let jwtToken = data.accessToken;
+    setCookie(name, jwtToken);
+    let tokenDetails = cookies.adminToken;
+    console.log(tokenDetails);
+  };
+
+  // http://localhost:8080/admin/login-admin
   const handleLogin = async () => {
     try {
       const response = await axios.post(
@@ -46,10 +51,11 @@ const PrivateRoutes = () => {
         adminInfo
       );
       console.log(response.data);
+      setInCookies('adminToken', response.data);
       setIsAuthenticated(true);
       navigate("/dashboard");
     } catch (error) {
-      console.error("Admin Login failed:", error);
+      console.error("Login failed:", error);
       setError("Invalid username or password");
     }
   };
@@ -78,7 +84,7 @@ const PrivateRoutes = () => {
         <form className="text-start h-full w-full flex flex-col  place-items-center gap-5">
           {/* input email */}
           <div className="flex flex-col w-2/4">
-            <label htmlFor="" className="font-sarif font-bold text-xl py-3">
+            <label htmlFor="" className="font-sarif py-1">
               Email or username
             </label>
             <input
@@ -91,7 +97,7 @@ const PrivateRoutes = () => {
           </div>
           {/* input Password */}
           <div className="relative text-start w-2/4 flex flex-col">
-            <label htmlFor="" className="font-sarif font-bold text-xl  py-3">
+            <label htmlFor="" className="font-sarif py-2">
               Password
             </label>
             <input
@@ -99,13 +105,13 @@ const PrivateRoutes = () => {
               value={password}
               onChange={handlePasswordChange}
               placeholder="Enter password"
-              className=" w-full text-black px-2 py-3 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1 tracking-widest"
+              className=" w-full text-black px-2 py-2 text-base border border-gray-300 rounded outline-none focus:ring-blue-500 focus:border-blue-500 focus:ring-1 tracking-widest"
             />
             {/* Eye Icon */}
             <Icon
               icon={icon}
               size={22}
-              className="absolute inset-y-0 right-0 flex px-4 pt-16 text-gray-600 cursor-pointer"
+              className="absolute inset-y-0 right-0 flex px-4 pt-12 text-gray-600 cursor-pointer"
               onClick={togglePasswordVisibility}
             />
           </div>
@@ -116,8 +122,8 @@ const PrivateRoutes = () => {
             </Link>
           </a>
 
-          <p className="text-start text-pretty gap-5 w-fit ">
-            <span className="opacity-75 font-serif gap-3">if you haven't already account?</span>
+          <p className="text-start text-pretty w-fit ">
+            <span className="opacity-75">if you haven't already account?</span>
             <Link to="/register">
               <span className="hover:underline font-medium text-lg">
                 Create account
@@ -139,21 +145,6 @@ const PrivateRoutes = () => {
 };
 
 export default PrivateRoutes;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useState } from "react";
 // import PrivateRoutesComponent from "./PrivateRoutesComponent";
