@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 
 function LoginForm() {
@@ -7,16 +8,24 @@ function LoginForm() {
   const [usernameOrEmailOrPhoneNumber, setUsername]=useState("");
   const [password, setPassword]=useState("");
   const [error, setError]=useState("");
-  
+  const [cookies , setCookies] = useCookies('userToken'); 
   const navigate = useNavigate();
+
+  // store token in cookies
+  const setInCookies = (name, data)=> {
+    let jwtToken = data.accessToken;
+    setCookies(name, jwtToken);
+    let tokenDetails = cookies.userToken;
+    console.log(tokenDetails);
+  };
 
   const agentLoginInfo = {
     usernameOrEmailOrPhoneNumber,
     password
   }
   console.log(agentLoginInfo);
-
   
+  // API call to post Data
   const handleAgentLogin = async () => {
     try {
       const response = await axios.post(
@@ -24,6 +33,7 @@ function LoginForm() {
         agentLoginInfo
       );
       console.log(response.data);
+      setInCookies('userToken', response.data);
       // setIsAuthenticated(true);
       navigate("/agentdashboard");  //agentDashboard required page...
     } catch (error) {

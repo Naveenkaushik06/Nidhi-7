@@ -27,7 +27,7 @@ const Dashboard = () => {
       {/* <BalanceHistoryChart /> */}
 
     </div>
-  )
-}
+  );
+};
 
 export default Dashboard;

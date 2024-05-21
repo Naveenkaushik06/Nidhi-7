@@ -3,29 +3,26 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Agentheader from "./Agentheader";
 import Agentsidebar from "./Agentsidebar";
+import { useCookies } from "react-cookie";
 
 const Userregister = () => {
 
-  // const [firstName, setFirstName]=useState("");
-  // const [lastName, setLastName]=useState("");
   const [username, setUsername]=useState("");
   const [email, setEmail]=useState("");
   const [phoneNumber, setPhoneNumber]=useState("");
-
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const cookies = useCookies();
 
   const addUserInfo = {
-    // firstName,
-    // lastName,
     username,
     email,
     phoneNumber
   }
   console.log(addUserInfo);
+// http://localhost:8080/admin/login-admin
 
-    // http://localhost:8080/admin/login-admin
-
+// API call to post Agent-Details
     const handleSubmit = async () => {
       try {
         const response = await axios.post(
