@@ -1,4 +1,5 @@
 import React from "react";
+import "../../App.css"
 
 function Form() {
   return (
@@ -7,7 +8,7 @@ function Form() {
         <div className="col-md-12">
           <div className="card">
             <div className="card-body">
-              <div className="d-flex justify-content-start">
+              <div className="d-flex justify-content-start flex">
                 <div className="mx-4 text-primary">Edit Profile</div>
                 <div className="mx-4 text-primary">Preferences</div>
                 <div className="mx-4 text-primary">Security</div>

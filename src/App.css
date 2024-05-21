@@ -1,1 +1,55 @@
 
+.container-blue {
+    background-color:#100D40;
+    color: white;
+  }
+  .sidebar{
+    font-size: 19px;
+    margin-left: 20px;
+  }
+  .vertical-line {
+    border-left: 1px solid #fff; /* Adjust thickness and color as needed */
+    height: 30px; /* Adjust height as needed */
+    margin-right: 20px; /* Adjust spacing between the vertical line and the adjacent links */
+  }
+  .user-welcome {
+   
+    display: inline-flex;
+    align-items: center; /* Optional: Align items vertically */
+  }
+  .user-welcome a {
+    display: inline-block;
+  }
+
+  .search-container{
+    margin-top: 15px;
+    margin-left: 10px;
+  }
+
+  .profile-pic{
+    position: absolute;
+    height:120px;
+    width:120px;
+    z-index: 1001;
+    padding: 10px;
+}
+.profile-pic img{
+   
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px 0px #c1c1c1;
+    cursor: pointer;
+    width: 150px;
+    height: 150px;
+}   
+
+.bi.bi-pencil-square {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  color: white; /* Adjust as needed */
+  background-color: black; /* Adjust as needed */
+  padding: 5px; /* Adjust as needed */
+  border-radius: 50%; /* To make it round */
+  cursor: pointer; /* To indicate it's clickable */
+}
+

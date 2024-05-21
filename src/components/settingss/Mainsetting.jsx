@@ -5,8 +5,8 @@ import Security from './Security'
 
 const Mainsetting = () => {
   return (
-    <div className='m-80'>
-      <EditProfile />
+    <div className='mt-24 ml-72 bg-blue-50'>
+      <EditProfile className="col-span-10" />
       <Preferences />
       <Security />
     </div>

@@ -27,7 +27,7 @@ import Home from "./components/landingpage/Home";
 import Userdashboard from "./components/user/Userdashboard";
 import Userregister from "./components/agent/Userregister";
 import Userlogin from "./components/user/Userlogin";
-
+import GetAllUser from "./components/user/GetAllUser"
 
 
 function AppLayout() {
@@ -123,15 +123,19 @@ const appRouter = createBrowserRouter([
         path: "/agentdashboard/userregister",
         element: <Userregister/>,
       },
+      
+      {
+        path: "/userlogin",
+        element: <Userlogin/>,
+      },
       {
         path: "/userdashboard",
         element: <Userdashboard/>,
       },
       {
-        path: "/userlogin",
-        element: <Userlogin/>,
+        path: "/userdashboard/getalluser",
+        element: <GetAllUser />,
       },
-
      
       
     ],

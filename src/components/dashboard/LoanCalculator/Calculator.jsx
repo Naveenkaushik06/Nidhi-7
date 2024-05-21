@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useCookies } from 'react-cookie';
 
-
 const Calculator = () => {
   const [ amount, setAmount ] = useState(0);
   const [ customAmount, setCustomAmount ] = useState('');
@@ -13,6 +12,7 @@ const Calculator = () => {
   const [payableTotalAmount, setpayableTotalAmount] = useState('');
   const [ calculate, setCalculate ] = useState(true);
   const [loading, setLoading] = useState(false);
+  
   const[cookies] = useCookies(['adminToken']);
 
   const loanTypeList = ['Gold', 'Vehicle', 'Home', 'BusinessLoan', 'PropertyLoan', 'Appliances', 'AgricultureLoan', 'Personal', 'Scheme'];
