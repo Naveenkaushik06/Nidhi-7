@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Usersidebar = () => {
   return (
     <>
-      <div className="fixed font-serif left-0 top-[54px]  z-40 pt-10  w-72 h-screen  transition-transform -translate-x-full bg-white  shadow-xl sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700">
+      <div className="fixed font-serif left-0 top-[54px]  z-40 pt-10  w-64 h-screen  transition-transform -translate-x-full bg-white  shadow-xl sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700">
         <div className="h-full  px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
           <ul className=" space-y-2 text-start  font-medium">
             <li className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group">
@@ -29,7 +29,7 @@ const Usersidebar = () => {
             </li>
             <li>
               <Link
-                to="/"
+                to="/userdashboard"
                 className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -54,7 +54,7 @@ const Usersidebar = () => {
             </li>
             <li className="text-start">
               <Link
-                to="/deposit"
+                to="/userdashboard/deposit"
                 className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
@@ -82,7 +82,7 @@ const Usersidebar = () => {
             </li>
             <li className="text-start">
               <Link
-                to="/loans"
+                to="/userdashboard/loans"
                 className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -110,7 +110,7 @@ const Usersidebar = () => {
 
             <li>
               <Link
-                to="/loancalculator"
+                to="/userdashboard/loancalculator"
                 className=" w-full flex items-center px-10 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
@@ -139,7 +139,7 @@ const Usersidebar = () => {
 
             <li>
               <Link
-                to="/services"
+                to="/userdashboard/services"
                 className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -167,7 +167,7 @@ const Usersidebar = () => {
             </li>
             <li>
               <Link
-                to="/messages"
+                to="/userdashboard/messages"
                 className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -196,7 +196,7 @@ const Usersidebar = () => {
             <li>
               <div
                 to="/settings/editprofile"
-                className="flex items-center  px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
+                className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
                   className="w-[25px] h-[25px] text-gray-800 dark:text-white"

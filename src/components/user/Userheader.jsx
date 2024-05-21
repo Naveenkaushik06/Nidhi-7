@@ -10,29 +10,26 @@ const Userheader = () => {
   useEffect(() => {
     const pathname = location.pathname;
     switch (pathname) {
-      case "/transactions":
-        setSelectedItem("Transactions");
+      case "/userdashboard":
+      setSelectedItem("Dashboard");
+      break;
+      case "/userdashboard/deposit":
+        setSelectedItem("Deposit");
         break;
-      case "/accounts":
-        setSelectedItem("Accounts");
-        break;
-      case "/investments":
-        setSelectedItem("Investment");
-        break;
-      case "/creditcards":
-        setSelectedItem("CreditCard");
-        break;
-      case "/loans":
+      case "/userdashboard/loans":
         setSelectedItem("Loans");
         break;
-      case "/services":
+        case "/userdashboard/loancalculator":
+          setSelectedItem("Loan calculator");
+          break;
+      case "/userdashboard/services":
         setSelectedItem("Services");
         break;
-      case "/mypriviliges":
-        setSelectedItem("MyPriviliges");
-        break;
-      case "/setting":
-        setSelectedItem("Setting");
+        case "/userdashboard/messages":
+          setSelectedItem("messages");
+          break;
+      case "settings/editprofile":
+        setSelectedItem("Settings");
         break;
       default:
         setSelectedItem("DashBoard");

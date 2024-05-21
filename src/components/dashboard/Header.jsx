@@ -26,9 +26,7 @@ const Header = () => {
       case "/services":
         setSelectedItem("Services");
         break;
-      case "/mypriviliges":
-        setSelectedItem("MyPriviliges");
-        break;
+     
       case "/setting":
         setSelectedItem("Setting");
         break;
