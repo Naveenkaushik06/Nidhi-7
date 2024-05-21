@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import TransactionPDF from "./TransactionPDF";
-import Sidebar from "../dashboard/Sidebar";
-import Header from "../dashboard/Header";
 
 const Transaction = () => {
   const maskAccountNumber = (accountNumber) => {
@@ -58,16 +56,14 @@ const Transaction = () => {
 
   return (
     <>
-    <Header/>
-     <Sidebar/>
       <div style={{ height: "100vh", background: "lightgrey" }}>
-        <div className="p-10 mt-20 h-auto mr-10 sm:ml-64">
-          <div className=" absolute top-24 left-80 mb-1">
-            <span className="text-xl font-bold font-mono ">
+        <div className=" p-8 mt-20 h-auto sm:ml-64">
+          <div className=" absolute top-24 left-56 mb-1">
+            <span className="text-xl font-bold font-mono">
               Transaction History
             </span>
           </div>
-          <div className=" absolute top-36 left-80 mb-1">
+          <div className=" absolute top-36 left-64 mb-1">
             <button
               className={`ext-sm text-blue-700  font-mono ${
                 selectedTimeFrame === "all" ? "font-bold" : ""
@@ -105,11 +101,11 @@ const Transaction = () => {
               </button>
             </div>
           </div>
-          <div className="absolute left-[19rem] w-[66rem]  mt-5 top-44  shadow-md sm:rounded-lg">
+          <div className="absolute left-56 w-4/5 mt-5 top-44 p-2 shadow-md sm:rounded-lg">
             <table className="w-full p-3 text-sm text-center rounded-lg text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 bg-slate-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                  <th className="w-4 p-4">
+                  <th className="w-4 p-2">
                     <div className="flex items-center">
                       <span className="font-bold font-mono text-base whitespace-nowrap text-gray-400">
                         Bank Name
@@ -118,23 +114,23 @@ const Transaction = () => {
                   </th>
                   <th
                     scope="col"
-                    className="px-8 py-3 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white"
+                    className="px-6 py-4 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white"
                   >
                     Transaction ID
                   </th>
-                  <th className="py-3 text-base font-mono font-bold text-gray-400 whitespace-nowrap dark:text-white">
+                  <th className="px-6 py-4 text-base font-mono  font-bold text-gray-400 whitespace-nowrap dark:text-white">
                     Amount
                   </th>
-                  <th className="py-3 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white">
+                  <th className="px-6 py-4 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white">
                     Account Number
                   </th>
-                  <th className="py-3 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white">
+                  <th className="px-6 py-4 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white">
                     Date
                   </th>
-                  <th className="py-3 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white">
+                  <th className="px-6 py-4 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white">
                     Status
                   </th>
-                  <th className="text-base font-bold font-mono py-3 text-gray-400 whitespace-nowrap dark:text-white">
+                  <th className="px-6 py-4 font-mono text-base font-bold text-gray-400 whitespace-nowrap dark:text-white">
                     Receipt
                   </th>
                 </tr>

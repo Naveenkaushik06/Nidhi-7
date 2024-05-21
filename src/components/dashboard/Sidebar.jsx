@@ -6,7 +6,7 @@ const Sidebar = () => {
     <>
       <Link
         id="logo-sidebar"
-        className="fixed font-serif top-0 left-0 z-40  w-72 h-screen pt-20 transition-transform -translate-x-full bg-white  shadow-xl sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
+        className="fixed font-serif top-0 left-0 z-40 h-screen pt-20 transition-transform -translate-x-full bg-white  shadow-xl sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700"
         aria-label="Sidebar"
       >
         <div className="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
@@ -15,8 +15,6 @@ const Sidebar = () => {
               <Link
                 to="/"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -33,7 +31,7 @@ const Sidebar = () => {
                   <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                   <polyline points="9 22 9 12 15 12 15 22"></polyline>
                 </svg>
-                <span className="flex-1  font-mono font-bold text-lg ms-6 whitespace-nowrap">
+                <span className="flex-1 tracking-wider text-sm ms-6 whitespace-nowrap">
                   Dashboard
                 </span>
               </Link>
@@ -42,8 +40,6 @@ const Sidebar = () => {
               <Link
                 to="/transactions"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
-
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -63,7 +59,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className=" flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap ">
+                <span className=" flex-1 tracking-wider ms-6 text-sm whitespace-nowrap ">
                   Transactions
                 </span>
               </Link>
@@ -71,11 +67,7 @@ const Sidebar = () => {
             <li className="text-start">
               <Link
                 to="/accounts"
-
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -94,7 +86,7 @@ const Sidebar = () => {
                     d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Zm0 0a8.949 8.949 0 0 0 4.951-1.488A3.987 3.987 0 0 0 13 16h-2a3.987 3.987 0 0 0-3.951 3.512A8.948 8.948 0 0 0 12 21Zm3-11a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
                   />
                 </svg>
-                <span className="whitespace-nowrap flex-1  font-mono font-bold ms-6 text-lg">
+                <span className="whitespace-nowrap flex-1 tracking-wider ms-6 text-sm">
                   Accounts
                 </span>
               </Link>
@@ -102,11 +94,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/investments"
-
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -126,7 +114,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1 tracking-wider ms-6 text-sm whitespace-nowrap">
                   Investments
                 </span>
               </Link>
@@ -134,10 +122,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/creditcards"
-
-                className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
-
+                className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
                   className="w-[25px] h-[25px] text-gray-800 dark:text-white"
@@ -157,7 +142,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1 tracking-wider ms-6 text-sm whitespace-nowrap">
                   Credit Cards
                 </span>
               </Link>
@@ -165,11 +150,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/loans"
-
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
-
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
-
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -187,7 +168,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 ms-6 text-lg  font-mono font-bold whitespace-nowrap">
+                <span className="flex-1 ms-6  text-sm whitespace-nowrap">
                   Loans
                 </span>
               </Link>
@@ -222,11 +203,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/services"
-
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -246,7 +223,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1 ms-6   font-mono font-bold text-lg whitespace-nowrap">
+                <span className="flex-1 ms-6  tracking-wider text-sm whitespace-nowrap">
                   Services
                 </span>
               </Link>
@@ -254,11 +231,7 @@ const Sidebar = () => {
             <li>
               <Link
                 to="/mypriviliges"
-
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
-                // className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
               >
                 <svg
                   className="w-6 h-6 text-gray-800 dark:text-white"
@@ -278,20 +251,15 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1  font-mono font-bold  ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1 tracking-wider  ms-6 text-sm whitespace-nowrap">
                   MyPriviliges
                 </span>
               </Link>
             </li>
             <li>
               <Link
-
                 to="/settings"
                 className="flex items-center  px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
-                // to="/settings/editprofile"
-                // className="flex items-center  px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
-
               >
                 <svg
                   className="w-[25px] h-[25px] text-gray-800 dark:text-white"
@@ -318,7 +286,7 @@ const Sidebar = () => {
                   />
                 </svg>
 
-                <span className="flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap">
+                <span className="flex-1 tracking-wider ms-6 text-sm whitespace-nowrap">
                   Settings
                 </span>
               </Link>
