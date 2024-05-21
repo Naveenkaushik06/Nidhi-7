@@ -1,107 +1,167 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
+import axios from "axios";
+import { useCookies } from 'react-cookie';
 
 const Agentmenu = () => {
+
+  const[cookies] = useCookies(['agentToken']);
+  console.log(cookies.agentToken);
+
+  const [data, setData] = useState(
+    [
+      {
+        "username": "piyush",
+        "email": "piyush307hit@gmail.com",
+        "phoneNumber": "5555555555"
+      },
+    ]
+  )
+console.log(data);
+
+  // const [username, setUsername]=useState("");
+  // const [email, setEmail]=useState("");
+  // const [phoneNumber, setPhoneNumber]=useState("");
+
+  const [error, setError] = useState("");
+  // const navigate = useNavigate();
+
+  // const getAllUserInfo = {
+  //   username,
+  //   email,
+  //   phoneNumber
+  // }
+  // console.log(getAllUserInfo);
+
+  // http://localhost:8080/agent/getAllUsers?agentEmail=piyush307hit@gmail.com
+    const getAllUser = async () => {
+      try {
+        let calUrl = 'http://localhost:8080/agent/getAllUsers?agentEmail=' + data[0].email;
+        console.log(calUrl);
+        const response = await axios.get(
+          calUrl,null,
+          {
+            headers: {
+              Authorization: "Bearer " + cookies.agentToken
+            },
+          }
+        );
+        console.log(response);
+        // console.log(response.data);
+      } catch (error) {
+        console.error("https://github.com/Nittankumar12/Nidhi-Bank", error);
+        setError("ERROR.....");
+      }
+    };
+    useEffect(()=>{
+      getAllUser()
+    },[])
+
   return (
-    <div>
-      <section className="w-full relative ml-72 top-20 overflow-hidden">
-        <div className="flex gap-3">
-        <div className=" border rounded-lg w-52 border-gray-300">
+    <div className="pl-3 pb-2">
+      <section className="w-full relative ml-64 top-24 overflow-hidden">
+        <div className="flex gap-3 ">
+
+          <Link to="/agentdashboard/getuser">
+          <div className="   bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
+            <div className=" p-2 flex flex-row ">
+              <span className="w-full font-bold ">Total User</span>
+              <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
+                <div>
+                  <span className=" text-green-950 tracking-wider">
+                    <TrendingUp />
+                  </span>
+                </div>
+                <div>
+                  <span className="text-green-950 ml-2 ">10.0%</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex p-2 flex-col ">
+              <span className="text-2xl font-bold"> 100</span>
+              <span className="font-bold">user</span>
+            </div>
+          </div>
+          </Link>
+
+          <div className="bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
             <div className=" p-2 flex flex-row">
-        <span className="w-full font-bold ">Total User</span>
-        <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
-          <div>
-            <span className=" text-green-950 tracking-wider">
-              <TrendingUp />
-            </span>
+              <span className="w-full font-bold ">Total User</span>
+              <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
+                <div>
+                  <span className=" text-green-950 tracking-wider">
+                    <TrendingUp />
+                  </span>
+                </div>
+                <div>
+                  <span className="text-green-950 ml-2 ">10.0%</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex p-2 flex-col ">
+              <span className="text-2xl font-bold"> 200</span>
+              <span className="font-bold">user</span>
+            </div>
           </div>
-          <div>
-            <span className="text-green-950 ml-2 ">10.0%</span>
-          </div>
-        </div>
-        </div>
-        <div className="flex p-2 flex-col ">
-        <span className="text-2xl font-bold"> 200</span>
-          <span className="font-bold">user</span>
-          </div>
-          </div>
-          <div className=" border rounded-lg w-52 border-gray-300">
+          <div className=" bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
             <div className=" p-2 flex flex-row">
-        <span className="w-full font-bold ">Total User</span>
-        <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
-          <div>
-            <span className=" text-green-950 tracking-wider">
-              <TrendingUp />
-            </span>
+              <span className="w-full font-bold ">Total User</span>
+              <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
+                <div>
+                  <span className=" text-green-950 tracking-wider">
+                    <TrendingUp />
+                  </span>
+                </div>
+                <div>
+                  <span className="text-green-950 ml-2 ">10.0%</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex p-2 flex-col ">
+              <span className="text-2xl font-bold"> 200</span>
+              <span className="font-bold">user</span>
+            </div>
           </div>
-          <div>
-            <span className="text-green-950 ml-2 ">10.0%</span>
-          </div>
-        </div>
-        </div>
-        <div className="flex p-2 flex-col ">
-        <span className="text-2xl font-bold"> 200</span>
-          <span className="font-bold">user</span>
-          </div>
-          </div>
-          <div className=" border rounded-lg w-52 border-gray-300">
+          <div className="bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
             <div className=" p-2 flex flex-row">
-        <span className="w-full font-bold ">Total User</span>
-        <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
-          <div>
-            <span className=" text-green-950 tracking-wider">
-              <TrendingUp />
-            </span>
+              <span className="w-full font-bold ">Total User</span>
+              <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
+                <div>
+                  <span className=" text-green-950 tracking-wider">
+                    <TrendingUp />
+                  </span>
+                </div>
+                <div>
+                  <span className="text-green-950 ml-2 ">10.0%</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex p-2 flex-col ">
+              <span className="text-2xl font-bold"> 200</span>
+              <span className="font-bold">user</span>
+            </div>
           </div>
-          <div>
-            <span className="text-green-950 ml-2 ">10.0%</span>
-          </div>
-        </div>
-        </div>
-        <div className="flex p-2 flex-col ">
-        <span className="text-2xl font-bold"> 200</span>
-          <span className="font-bold">user</span>
-          </div>
-          </div>
-          <div className=" border rounded-lg w-52 border-gray-300">
+          <div className=" bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
             <div className=" p-2 flex flex-row">
-        <span className="w-full font-bold ">Total User</span>
-        <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
-          <div>
-            <span className=" text-green-950 tracking-wider">
-              <TrendingUp />
-            </span>
-          </div>
-          <div>
-            <span className="text-green-950 ml-2 ">10.0%</span>
-          </div>
-        </div>
-        </div>
-        <div className="flex p-2 flex-col ">
-        <span className="text-2xl font-bold"> 200</span>
-          <span className="font-bold">user</span>
-          </div>
-          </div>
-          <div className=" border rounded-lg w-52 border-gray-300">
-            <div className=" p-2 flex flex-row">
-        <span className="w-full font-bold ">Total User</span>
-        <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
-          <div>
-            <span className=" text-green-950 tracking-wider">
-              <TrendingUp />
-            </span>
-          </div>
-          <div>
-            <span className="text-green-950 ml-2 ">10.0%</span>
+              <span className="w-full font-bold ">Total User</span>
+              <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
+                <div>
+                  <span className=" text-green-950 tracking-wider">
+                    <TrendingUp />
+                  </span>
+                </div>
+                <div>
+                  <span className="text-green-950 ml-2 ">10.0%</span>
+                </div>
+              </div>
+            </div>
+            <div className="flex p-2 flex-col ">
+              <span className="text-2xl font-bold"> 200</span>
+              <span className="font-bold">user</span>
+            </div>
           </div>
         </div>
-        </div>
-        <div className="flex p-2 flex-col ">
-        <span className="text-2xl font-bold"> 200</span>
-          <span className="font-bold">user</span>
-          </div>
-          </div>
-          </div>
       </section>
     </div>
   );

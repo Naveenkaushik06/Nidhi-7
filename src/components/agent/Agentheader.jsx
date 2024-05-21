@@ -10,28 +10,25 @@ const Agentheader = () => {
   useEffect(() => {
     const pathname = location.pathname;
     switch (pathname) {
-      case "/transactions":
-        setSelectedItem("Transactions");
+      case "/agentdashboard":
+        setSelectedItem("Dashboard");
         break;
-      case "/accounts":
-        setSelectedItem("Accounts");
+      case "/agentdashboard/deposit":
+        setSelectedItem("Deposit");
         break;
-      case "/investments":
-        setSelectedItem("Investment");
-        break;
-      case "/creditcards":
-        setSelectedItem("CreditCard");
-        break;
-      case "/loans":
+      case "/agentdashboard/loans":
         setSelectedItem("Loans");
         break;
-      case "/services":
+        case "/agentdashboard/loancalculator":
+          setSelectedItem("Loan Calculator");
+          break;
+      case "/agentdashboard/services":
         setSelectedItem("Services");
         break;
-      case "/mypriviliges":
-        setSelectedItem("MyPriviliges");
+        case "/agentdashboard/messages":
+        setSelectedItem("Messages");
         break;
-      case "/setting":
+      case "/agentdashboard/setting":
         setSelectedItem("Setting");
         break;
       default:
