@@ -27,6 +27,7 @@ import Userdashboard from "./components/user/Userdashboard";
 import Userregister from "./components/agent/Userregister";
 import Userlogin from "./components/user/Userlogin";
 import GetUser from "./components/agent/GetUser";
+import GetAllAgent from "./components/admin/GetAllAgent";
 
 
 function AppLayout() {
@@ -75,7 +76,6 @@ const appRouter = createBrowserRouter([
           //   path: "services",
           //   element: <Agentlogin/>
           // },
-          
           {
             path: "mypriviliges",
             element: <Agentsidebar/>
@@ -100,6 +100,10 @@ const appRouter = createBrowserRouter([
             path: "calculator",
             element: <LoanCalculator />
           },
+          {
+            path:"dashboard/getagents",
+            element:<GetAllAgent />
+          }
         ],
       },
       {
@@ -117,7 +121,6 @@ const appRouter = createBrowserRouter([
 
 
       //agent routing
-
 
       {
         path: "/agentdashboard",
