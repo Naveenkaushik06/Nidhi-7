@@ -6,54 +6,68 @@ import Agentsidebar from "./Agentsidebar";
 import { useCookies } from "react-cookie";
 
 const Userregister = () => {
-
-  const [username, setUsername]=useState("");
-  const [email, setEmail]=useState("");
-  const [phoneNumber, setPhoneNumber]=useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const cookies = useCookies();
+  const [agentEmail, setAgentEmail] = useState("");
+
+  const [cookies, setCookies] = useCookies("agentToken");
+  console.log(cookies.agentToken);
 
   const addUserInfo = {
     username,
     email,
-    phoneNumber
-  }
+    phoneNumber,
+  };
   console.log(addUserInfo);
-// http://localhost:8080/admin/login-admin
 
-// API call to post Agent-Details
-    const handleSubmit = async () => {
-      try {
-        const response = await axios.post(
-          "http://localhost:8080/admin/addAgent",
-          addUserInfo,
-          {
-            headers: {
-              // Add your authentication token or API key here
-              Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXZlZW4iLCJpYXQiOjE3MTU4NDA4ODUsImV4cCI6MTcxNTg0NDQ4NX0.W1eynexz05eByl625E0KJzcCWdAa71dwZp2EsrodShE"}`,
-            },
-          }
-        );
-        console.log(response);
-        console.log(response.data);
-        navigate("/dashboard");
-      } catch (error) {
-        console.error("https://github.com/Nittankumar12/Nidhi-Bank", error);
-        setError("Empty Fields");
-      }
-    };
-    
+  // agentEmail backend api is not ready...(static--> agentEmail)
+  const [data, setData] = useState(
+    {
+      agentEmail: "piyush307hit@gmail.com",
+    },
+    {
+      agentEmail: "aserajbrm01@gmail.com",
+    }
+  );
+
+  // http://localhost:8080/admin/addAgent
+  // API call to post Agent-Details
+  const handleSubmit = async () => {
+    try {
+      // http://localhost:8080/agent/addUser?agentEmail=piyush307hit@gmail.com
+      // change endpoint according to user registration...due
+      const response = await axios.post(
+        "http://localhost:8080/agent/addUser?agentEmail=" + data.agentEmail,
+        addUserInfo,
+        {
+          headers: {
+            Authorization: "Bearer " + cookies.agentToken,
+          },
+        }
+      );
+      console.log(response);
+      console.log(response.data);
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("https://github.com/Nittankumar12/Nidhi-Bank", error);
+      setError("Empty Fields");
+    }
+  };
+
   return (
     <div>
-    <Agentheader/>
-    <Agentsidebar/>
+      <Agentheader />
+      <Agentsidebar />
       <div className="p-8 ml-72 mt-20 rounded border border-gray-200">
-        <h1 className="font-mono font-bold text-3xl">Welcome to Nidhi Add User Section </h1>
+        <h1 className="font-mono font-bold text-3xl">
+          Welcome to Nidhi Add User Section
+        </h1>
 
         <form>
           <div className="mt-8 grid lg:grid-cols-2 gap-4">
-            
             {/* <div>
               <label
                 htmlFor="first-name"
@@ -96,8 +110,8 @@ const Userregister = () => {
                 Username
               </label>
               <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 type="username"
                 name="username"
                 id="username"
@@ -113,8 +127,8 @@ const Userregister = () => {
                 Email Address
               </label>
               <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 name="email"
                 id="email"
@@ -122,7 +136,7 @@ const Userregister = () => {
                 placeholder="yourmail@gmail.com"
               />
             </div>
-            
+
             <div>
               <label
                 htmlFor="number"
@@ -131,8 +145,8 @@ const Userregister = () => {
                 Phone Number
               </label>
               <input
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
                 type="number"
                 name="number"
                 id="number"
@@ -143,7 +157,7 @@ const Userregister = () => {
           </div>
           <div className="space-x-4 mt-8">
             <button
-            onClick={handleSubmit}
+              onClick={handleSubmit}
               type="button"
               className="py-2 px-4 font-mono font-bold bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50"
             >

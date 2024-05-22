@@ -1,28 +1,35 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 
 function ForgetForm() {
   const [agentEmail, setAgentEmail] = useState("");
-  const [agentPassword, setAgentPassword] = useState("");
+  const [password, setPassword] = useState("");
   console.log(agentEmail);
-  console.log(agentPassword);
-  const [error, setError] = useState("");
+  console.log(password);
 
+  const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const [cookies, setCookies] = useCookies("agentToken");
+  console.log(cookies.agentToken);
+
+  const forgetAgentInfo = {
+    agentEmail,
+    password
+  }
+  
+  // http://localhost:8080/agent/updateAgentPassword?agentEmail=piyush307hit@gmail.com&agentPassword=12345
+  
   const handleForgetAgentPassword = async () => {
     try {
-      const response = await axios.put(
+      const response = await axios.post(
         "http://localhost:8080/agent/updateAgentPassword",
+        forgetAgentInfo,
         {
-          params: {
-            agentEmail: agentEmail,
-            agentPassword: agentPassword,
-          },
           headers: {
-            Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJwaXl1c2giLCJpYXQiOjE3MTU3NzEyOTYsImV4cCI6MTcxNTc3NDg5Nn0.NijpkH5UBWg3EZ5kyKVAyPbgZi-iRQ_XBScdV7bS1u4"}`,
-            "Content-Type": "application/json",
+            Authorization: "Bearer " + cookies.agentToken,
           },
         }
       );
@@ -86,8 +93,8 @@ function ForgetForm() {
                     New Password
                   </label>
                   <input
-                    value={agentPassword}
-                    onChange={(e) => setAgentPassword(e.target.value)}
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
                     className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="password"
                     type="password"
@@ -123,18 +130,6 @@ function ForgetForm() {
 }
 
 export default ForgetForm;
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import axios from "axios";
 // import React, { useState } from "react";

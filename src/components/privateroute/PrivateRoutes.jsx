@@ -10,6 +10,7 @@ import { useCookies } from "react-cookie";
 const PrivateRoutes = () => {
   
   const [cookies, setCookie] = useCookies(['adminToken']);
+  // console.log(cookies.adminToken);
 
   const [type, setType] = useState("password");
   const [icon, setIcon] = useState(eyeOff);

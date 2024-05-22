@@ -1,60 +1,58 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 
-
 const RegisterhtmlForm = () => {
-
   // const [firstName, setFirstName]=useState("");
   // const [lastName, setLastName]=useState("");
-  const [username, setUsername]=useState("");
-  const [email, setEmail]=useState("");
-  const [phoneNumber, setPhoneNumber]=useState("");
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
 
+  const [cookies , setCookies] = useCookies('adminToken'); 
+  console.log(cookies.adminToken);
+
   const addAgentInfo = {
-    // firstName,
-    // lastName,
     username,
     email,
-    phoneNumber
-  }
+    phoneNumber,
+  };
   console.log(addAgentInfo);
 
-    // http://localhost:8080/admin/login-admin
+  // http://localhost:8080/admin/login-admin
 
-    const handleSubmit = async () => {
-      try {
-        const response = await axios.post(
-          "http://localhost:8080/admin/addAgent",
-          addAgentInfo,
-          {
-            headers: {
-              // Add your authentication token or API key here
-              Authorization: `Bearer ${"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJuYXZlZW4iLCJpYXQiOjE3MTU4NDA4ODUsImV4cCI6MTcxNTg0NDQ4NX0.W1eynexz05eByl625E0KJzcCWdAa71dwZp2EsrodShE"}`,
-            },
-          }
-        );
-        console.log(response);
-        console.log(response.data);
-        navigate("/dashboard");
-      } catch (error) {
-        console.error("https://github.com/Nittankumar12/Nidhi-Bank", error);
-        setError("Empty Fields");
-      }
-    };
-    
+  const handleSubmit = async () => {
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/admin/addAgent",
+        addAgentInfo,
+        {
+          headers: {
+          Authorization: "Bearer " + cookies.adminToken,
+        },
+        }
+      );
+      console.log(response);
+      console.log(response.data);
+      navigate("/dashboard");
+    } catch (error) {
+      console.error("https://github.com/Nittankumar12/Nidhi-Bank", error);
+      setError("Empty Fields");
+    }
+  };
   return (
     <div>
-  
       <div className="p-8 ml-72 mt-20 rounded border border-gray-200">
-        <h1 className="font-mono font-bold text-3xl">Welcome to Nidhi Add Agent Section </h1>
+        <h1 className="font-mono font-bold text-3xl">
+          Welcome to Nidhi Add Agent Section
+        </h1>
 
         <form>
           <div className="mt-8 grid lg:grid-cols-2 gap-4">
-            
             {/* <div>
               <label
                 htmlFor="first-name"
@@ -97,8 +95,8 @@ const RegisterhtmlForm = () => {
                 Username
               </label>
               <input
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
                 type="username"
                 name="username"
                 id="username"
@@ -114,8 +112,8 @@ const RegisterhtmlForm = () => {
                 Email Address
               </label>
               <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 type="email"
                 name="email"
                 id="email"
@@ -123,7 +121,7 @@ const RegisterhtmlForm = () => {
                 placeholder="yourmail@gmail.com"
               />
             </div>
-            
+
             <div>
               <label
                 htmlFor="number"
@@ -132,8 +130,8 @@ const RegisterhtmlForm = () => {
                 Phone Number
               </label>
               <input
-              value={phoneNumber}
-              onChange={(e) => setPhoneNumber(e.target.value)}
+                value={phoneNumber}
+                onChange={(e) => setPhoneNumber(e.target.value)}
                 type="number"
                 name="number"
                 id="number"
@@ -144,7 +142,7 @@ const RegisterhtmlForm = () => {
           </div>
           <div className="space-x-4 mt-8">
             <button
-            onClick={handleSubmit}
+              onClick={handleSubmit}
               type="button"
               className="py-2 px-4 font-mono font-bold bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50"
             >

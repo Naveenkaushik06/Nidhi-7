@@ -13,7 +13,8 @@ const Calculator = () => {
   const [ calculate, setCalculate ] = useState(true);
   const [loading, setLoading] = useState(false);
   
-  const[cookies] = useCookies(['adminToken']);
+  const [cookies , setCookies] = useCookies('adminToken'); 
+  console.log(cookies.adminToken);
 
   const loanTypeList = ['Gold', 'Vehicle', 'Home', 'BusinessLoan', 'PropertyLoan', 'Appliances', 'AgricultureLoan', 'Personal', 'Scheme'];
   

@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 
 function Userlogin() {
@@ -7,8 +8,17 @@ function Userlogin() {
   const [usernameOrEmailOrPhoneNumber, setUsername]=useState("");
   const [password, setPassword]=useState("");
   const [error, setError]=useState("");
-  
   const navigate = useNavigate();
+
+  const [cookies , setCookies] = useCookies('userToken'); 
+  console.log(cookies.userToken);
+
+  const setInCookies = (name, data) => {
+    let jwtToken = data.accessToken;
+    setCookies(name, jwtToken);
+    let tokenDetails = cookies.userToken;
+    console.log(tokenDetails);
+  };
 
   const userLoginInfo = {
     usernameOrEmailOrPhoneNumber,
@@ -24,6 +34,7 @@ function Userlogin() {
         userLoginInfo
       );
       console.log(response.data);
+      setInCookies('userToken', response.data);
       // setIsAuthenticated(true);
       navigate("/userdashboard");  //agentDashboard required page...
     } catch (error) {

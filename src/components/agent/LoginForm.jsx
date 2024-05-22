@@ -8,14 +8,16 @@ function LoginForm() {
   const [usernameOrEmailOrPhoneNumber, setUsername]=useState("");
   const [password, setPassword]=useState("");
   const [error, setError]=useState("");
-  const [cookies , setCookies] = useCookies('userToken'); 
   const navigate = useNavigate();
+
+  const [cookies , setCookies] = useCookies('agentToken'); 
+  console.log(cookies.agentToken);
 
   // store token in cookies
   const setInCookies = (name, data)=> {
     let jwtToken = data.accessToken;
     setCookies(name, jwtToken);
-    let tokenDetails = cookies.userToken;
+    let tokenDetails = cookies.agentToken;
     console.log(tokenDetails);
   };
 
@@ -33,7 +35,7 @@ function LoginForm() {
         agentLoginInfo
       );
       console.log(response.data);
-      setInCookies('userToken', response.data);
+      setInCookies('agentToken', response.data);
       // setIsAuthenticated(true);
       navigate("/agentdashboard");  //agentDashboard required page...
     } catch (error) {
