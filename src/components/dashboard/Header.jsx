@@ -8,29 +8,32 @@ const Header = () => {
   useEffect(() => {
     const pathname = location.pathname;
     switch (pathname) {
-      case "/transactions":
+      case "/admindashboard":
+        setSelectedItem("Dashboard");
+        break;
+      case "/admindashboard/transactions":
         setSelectedItem("Transactions");
         break;
-      case "/accounts":
+      case "/admindashboard/accounts":
         setSelectedItem("Accounts");
         break;
-      case "/investments":
+      case "/admindashboard/investments":
         setSelectedItem("Investment");
         break;
-      case "/creditcards":
+      case "/admindashboard/creditcards":
         setSelectedItem("CreditCard");
         break;
-      case "/loans":
+      case "/admindashboard/loans":
         setSelectedItem("Loans");
         break;
-      case "/services":
+      case "/admindashboard/services":
         setSelectedItem("Services");
         break;
      
-      case "/setting":
+      case "/admindashboard/setting":
         setSelectedItem("Setting");
         break;
-        case "/calculator":
+        case "/admindashboard/calculator":
         setSelectedItem("Loan Calculator");
         break;
       default:
