@@ -28,6 +28,9 @@ import Userregister from "./components/agent/Userregister";
 import Userlogin from "./components/user/Userlogin";
 import GetUser from "./components/agent/GetUser";
 import GetAllAgent from "./components/admin/GetAllAgent";
+import Adminmenu from "./components/admin/Adminmenu";
+import Admindashboard from "./components/admin/Admindashboard";
+import GetAgent from "./components/admin/GetAgent";
 
 
 function AppLayout() {
@@ -61,15 +64,11 @@ const appRouter = createBrowserRouter([
         element: <PrivateRoutes />,
         children: [
           {
-            path: "dashboard",
-            element: <Dashboard />,
-          },
-          {
-            path: "transactions",
+            path: "admindashboard/transactions",
             element: <Transaction />
           },
           {
-            path: "creditcards",
+            path: "admindashboard/creditcards",
             element: <Register />
           },
           // {
@@ -77,7 +76,7 @@ const appRouter = createBrowserRouter([
           //   element: <Agentlogin/>
           // },
           {
-            path: "mypriviliges",
+            path: "admindashboard/mypriviliges",
             element: <Agentsidebar/>
           },
           {
@@ -89,21 +88,26 @@ const appRouter = createBrowserRouter([
             element: <RegisterForm />,
           },
           {
-            path: "loans",
+            path: "admindashboard/loans",
             element: <Loans />
           },
           {
-            path: "transactions",
+            path: "admindashboard/transactions",
             element: <Transaction/>
           },
           {
-            path: "calculator",
+            path: "admindashboard/calculator",
             element: <LoanCalculator />
           },
           {
-            path:"dashboard/getagents",
-            element:<GetAllAgent />
-          }
+            path:"admindashboard",
+            element:<Admindashboard />
+          },
+          {
+            path:"getagent",
+            element:<GetAgent />
+          },
+        
         ],
       },
       {
