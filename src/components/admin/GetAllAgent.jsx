@@ -1,9 +1,9 @@
 import { useSelector } from "react-redux";
  
-const GetAllUser = () => {
- 
-  const listOfAllUsers  = useSelector((store) => store.getalluser.listOfAllUsers);
-  console.log(listOfAllUsers[0]);
+const GetAllAgent = () => {
+
+  const listOfAllAgents  = useSelector((store) => store.getallagent.listOfAllAgents);
+  // console.log(listOfAllAgents[0]);
 
   return (
     <>
@@ -12,23 +12,23 @@ const GetAllUser = () => {
           className="flex flex-wrap row employee-card-detail w-9/12 h-auto ml-72 mt-32 "
           style={{ maxWidth: "66rem" }}
         >
-          {Array.isArray(listOfAllUsers) && listOfAllUsers.length > null ? (
-            listOfAllUsers[0].map((data, index) => (
+          {Array.isArray(listOfAllAgents) && listOfAllAgents.length > null ? (
+            listOfAllAgents[0].map((data, index) => (
               <div className="col-md-6 bg-white -mt-10 " key={index}>
                 <div className="card mb-1 employee-card-detai ">
                   <div className="row g-0 bg-gray-50 mt-2 ml-1 mb-10 mr-10 ">
                     <div className="col-md-8 mt-4 ">
                       <div className=" p-4 bg-indigo-300 border border-green-400 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h6 className="text-extrabold text-xl font-mono">
-                          <b>Username:</b> {data.userName}
+                          <b>Name:</b> {data.name}
                         </h6>
                         <p className="text-extrabold text-xl font-mono">
-                          <b>Email:</b> {data.email}
+                          <b>Email:</b> {data.agentEmail}
                         </p>
 
                         <h6 className="text-extrabold text-xl font-mono">
-                          <b>Phone: </b>
-                          {data.phoneNumber}
+                          <b>AgentId: </b>
+                          {data.agentId}
                         </h6>
 
                         <div className="flex justify-center mt-5">
@@ -61,25 +61,14 @@ const GetAllUser = () => {
                         </div>
                       </div>
                     </div>
-                    {/* <div className="col-md-4">
-                      <img
-                        style={{
-                          width: "90px",
-                          margin: "25px 0px 0px 15px",
-                          borderRadius: "10px",
-                        }}
-                        src={data.Picture}
-                        className="img-fluid rounded-start card-img"
-                        alt="..."
-                      />
-                    </div> */}
+
                   </div>
                 </div>
               </div>
             ))
           ) : (
             <div style={{}}>
-              <p>No Users data available</p>
+              <p>No Agents data available</p>
             </div>
           )}
         </div>
@@ -88,17 +77,4 @@ const GetAllUser = () => {
   );
 };
 
-export default GetAllUser;
-
-//  <a
-//   href="#"
-//   className="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-// >
-//   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-//     Noteworthy technology acquisitions 2021
-//   </h5>
-//   <p className="font-normal text-gray-700 dark:text-gray-400">
-//     Here are the biggest enterprise technology acquisitions of 2021 so far, in
-//     reverse chronological order.
-//   </p>
-// </a>; 
+export default GetAllAgent;
