@@ -43,9 +43,9 @@ const handleSubmit = async (e)=> {
     }
     );
     console.log('Form submitted successfully: ', response);
-    setInstallMent(response.data['totalPayment']);
+    setInstallMent(response.data['loanEmi']);
     setpayableInterest(response.data['totalInterestPayable']);
-    setpayableTotalAmount(response.data['loanEmi']);
+    setpayableTotalAmount(response.data['totalPayment']);
   } catch (error) {
     console.error('Error submitting form: ', error);
   }
