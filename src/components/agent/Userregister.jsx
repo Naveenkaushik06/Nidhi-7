@@ -1,9 +1,10 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Agentheader from "./Agentheader";
 import Agentsidebar from "./Agentsidebar";
 import { useCookies } from "react-cookie";
+import { useSelector } from "react-redux";
 
 const Userregister = () => {
   const [username, setUsername] = useState("");
@@ -17,7 +18,22 @@ const Userregister = () => {
   // console.log(cookies.agentToken);
 
     const [cookies, setCookies] = useCookies("adminToken");
-  console.log(cookies.adminToken);
+    console.log(cookies.adminToken);
+
+  const [agentRefferalCode, setAgentRefferalCode] = useState("");
+  console.log(agentRefferalCode);
+
+  const listOfAllAgents  = useSelector((store) => store.getallagent.listOfAllAgents);
+  console.log(listOfAllAgents[0]);
+  console.log(listOfAllAgents[0]?.[4]?.agentRefferalCode);
+
+  useEffect(() => {
+    if (listOfAllAgents && listOfAllAgents.length > 0) {
+      // console.log(listOfAllAgents[0]?.[2]?.agentRefferalCode);
+      setAgentRefferalCode(listOfAllAgents[0]?.[2]?.agentRefferalCode);
+    }
+  }, []);
+
 
   const addUserInfo = {
     username,
@@ -26,15 +42,17 @@ const Userregister = () => {
   };
   console.log(addUserInfo);
 
+  // agentRefferalCode
   // agentEmail backend api is not ready...(static--> agentEmail)
-  const [data, setData] = useState(
-    {
-      agentEmail: "piyush307hit@gmail.com",
-    },
-    {
-      agentEmail: "aserajbrm01@gmail.com",
-    }
-  );
+  
+  // const [data, setData] = useState(
+  //   {
+  //     agentEmail: "piyush307hit@gmail.com",
+  //   },
+  //   {
+  //     agentEmail: "aserajbrm01@gmail.com",
+  //   }
+  // );
 
   // http://localhost:8080/admin/addAgent
   // API call to post Agent-Details
@@ -43,7 +61,7 @@ const Userregister = () => {
       // http://localhost:8080/agent/addUser?agentEmail=piyush307hit@gmail.com
       // change endpoint according to user registration...due
       const response = await axios.post(
-        "http://localhost:8080/admin/addUser?agentEmail=" + data.agentEmail,
+        `http://localhost:8080/admin/addUser?agentRefferalCode=${listOfAllAgents[0].agentRefferalCode}`,
         addUserInfo,
         {
           headers: {

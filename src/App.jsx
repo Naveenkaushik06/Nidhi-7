@@ -130,31 +130,31 @@ const appRouter = createBrowserRouter([
         element: <Agentdashboard />,
       },
       {
-        path: "/agentdashboard/deposit",
+        path: "/agentdashboard/commission",
         element: <Agentdashboard />,
       },
 
-      {
-        path: "/agentdashboard/loans",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/loancalculator",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/messages",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/services",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/settings",
-        element: <Agentdashboard />,
-        
-      },
+      // {
+      //   path: "/agentdashboard/loans",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/loancalculator",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/messages",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/services",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/settings",
+      //   element: <Agentdashboard />,
+      // },
+      
       {
         path: "/agentdashboard/getuser",
         element: <GetUser />,
