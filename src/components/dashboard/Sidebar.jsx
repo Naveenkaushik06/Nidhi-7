@@ -13,7 +13,7 @@ const Sidebar = () => {
           <ul className=" space-y-2 text-start mt-7 font-medium">
             <li>
               <Link
-                to="/dashboard"
+                to="/admindashboard"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -38,7 +38,7 @@ const Sidebar = () => {
             </li>
             <li className="text-start">
               <Link
-                to="/transactions"
+                to="/admindashboard/transactions"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
@@ -66,7 +66,7 @@ const Sidebar = () => {
             </li>
             <li className="text-start">
               <Link
-                to="/accounts"
+                to="/admindashboard/accounts"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -93,7 +93,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/investments"
+                to="/admindashboard/investments"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
@@ -121,7 +121,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/creditcards"
+                to="/admindashboard/creditcards"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
@@ -149,7 +149,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/loans"
+                to="/admindashboard/loans"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
@@ -175,7 +175,7 @@ const Sidebar = () => {
             </li>
             <li>
               <Link
-                to="/calculator"
+                to="/admindashboard/calculator"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
@@ -202,7 +202,7 @@ const Sidebar = () => {
 
             <li>
               <Link
-                to="/services"
+                to="/admindashboard/services"
                 className="flex items-center px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg
