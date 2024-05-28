@@ -4,9 +4,9 @@ import { useCookies } from "react-cookie";
 import { Link, useNavigate } from "react-router-dom";
 
 function ForgetForm() {
-  const [agentEmail, setAgentEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  console.log(agentEmail);
+  console.log(email);
   console.log(password);
 
   const [error, setError] = useState("");
@@ -16,7 +16,7 @@ function ForgetForm() {
   console.log(cookies.agentToken);
 
   const forgetAgentInfo = {
-    agentEmail,
+    email,
     password
   }
   
@@ -34,7 +34,7 @@ function ForgetForm() {
         }
       );
       console.log(response.data);
-      // navigate("/dashboard");  // Uncomment this to navigate after success
+      navigate("/loginform");  // Uncomment this to navigate after success
     } catch (error) {
       console.error("Error:", error);
       setError(
@@ -77,8 +77,8 @@ function ForgetForm() {
                     Agent Email
                   </label>
                   <input
-                    value={agentEmail}
-                    onChange={(e) => setAgentEmail(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                     className="w-full px-3 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                     id="email"
                     type="email"

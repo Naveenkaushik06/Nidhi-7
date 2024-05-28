@@ -111,9 +111,18 @@ const Header = () => {
                   </svg>
                 </Link>
               </div>
+
               <div className="p-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
                 <Link to="/registerform">Add Agent</Link>
               </div>
+
+              <div className="p-2 ml-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
+                <Link to="/userregister">Add User</Link>
+              </div>
+
+
+
+
               <div className="px-4">
                 <svg
                   className="w-7 bg-gray-200 rounded-full  h-7 text-red-500 dark:text-white"
@@ -133,6 +142,7 @@ const Header = () => {
                   />
                 </svg>
               </div>
+
               <div className="flex items-center">
                 <div className="flex items-center ms-3">
                   <div>
