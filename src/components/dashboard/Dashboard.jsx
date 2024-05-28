@@ -1,6 +1,9 @@
-import React from 'react'
-// import DashboardCards from './TestDashboard'
-// import RightCard from './TestDashboard2'
+import DashboardCards from './DashboardCard/DashboardCards';
+import RightCard from './RightCard/RightCared';
+import DailyActivityChart from './DailyActivityChart/DailyActivityChart';
+import PieChart from './PieChart/PieChart';
+import Transfer from './QuickTransfer/Transfer';
+import BalanceHistoryChart from './BalanceHistoryChart/BalanceHistoryChart';
 
 const Dashboard = () => {
   return (
@@ -8,24 +11,24 @@ const Dashboard = () => {
 
     <div className="grid grid-cols-2 justify-center items-center mt-20 h-auto gap-5 ml-64">
       <div className="border justify-items-center justify-center mb-20">
-        {/* <DashboardCards /> */}
+        <DashboardCards />
       </div>
       <div className=" ml-20">
-        {/* <RightCard /> */}
+        <RightCard />
       </div>
       <div>
-        {/* <DailyActivityChart /> */}
+        <DailyActivityChart />
       </div>
       <div>
-        {/* <PieChart /> */}
+        <PieChart />
       </div>
 
       <div >
-        {/* <Transfer /> */}
+        <Transfer />
       </div>
 
-      {/* <BalanceHistoryChart /> */}
-
+      <BalanceHistoryChart />
+      
     </div>
   );
 };
