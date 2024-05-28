@@ -74,6 +74,14 @@ const appRouter = createBrowserRouter([
             path: "registerform",
             element: <RegisterForm />,
           },
+
+          {
+            path: "userregister",
+            element: <Userregister/>,
+          },
+
+
+
           {
             path: "admindashboard/loans",
             element: <Loans />
@@ -122,40 +130,41 @@ const appRouter = createBrowserRouter([
         element: <Agentdashboard />,
       },
       {
-        path: "/agentdashboard/deposit",
+        path: "/agentdashboard/commission",
         element: <Agentdashboard />,
       },
 
-      {
-        path: "/agentdashboard/loans",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/loancalculator",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/messages",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/services",
-        element: <Agentdashboard />,
-      },
-      {
-        path: "/agentdashboard/settings",
-        element: <Agentdashboard />,
-        
-      },
+      // {
+      //   path: "/agentdashboard/loans",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/loancalculator",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/messages",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/services",
+      //   element: <Agentdashboard />,
+      // },
+      // {
+      //   path: "/agentdashboard/settings",
+      //   element: <Agentdashboard />,
+      // },
+      
       {
         path: "/agentdashboard/getuser",
         element: <GetUser />,
       },
 
-      {
-        path: "/agentdashboard/userregister",
-        element: <Userregister/>,
-      },
+      // {
+      //   path: "/agentdashboard/userregister",
+      //   element: <Userregister/>,
+      // },
+
         // user Routing
       {
         path: "/userlogin",

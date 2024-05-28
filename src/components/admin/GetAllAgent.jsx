@@ -23,12 +23,17 @@ const GetAllAgent = () => {
                           <b>Name:</b> {data.name}
                         </h6>
                         <p className="text-extrabold text-xl font-mono">
-                          <b>Email:</b> {data.agentEmail}
+                          <b>Email:</b> {data.email}
                         </p>
 
                         <h6 className="text-extrabold text-xl font-mono">
                           <b>AgentId: </b>
                           {data.agentId}
+                        </h6>
+
+                        <h6 className="text-extrabold text-xl font-mono">
+                          <b>AgentRefferalCode: </b>
+                          {data.agentRefferalCode}
                         </h6>
 
                         <div className="flex justify-center mt-5">

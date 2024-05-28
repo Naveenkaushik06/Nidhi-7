@@ -52,9 +52,10 @@ const Agentsidebar = () => {
                 </span>
               </Link>
             </li>
+
             <li className="text-start">
               <Link
-                to="/agentdashboard/deposit"
+                to="/agentdashboard/commission"
                 className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
               >
                 <svg
@@ -76,11 +77,12 @@ const Agentsidebar = () => {
                 </svg>
 
                 <span className=" flex-1  font-mono font-bold ms-6 text-lg whitespace-nowrap ">
-                  Deposit
+                Commission
                 </span>
               </Link>
             </li>
-            <li className="text-start">
+
+            {/* <li className="text-start">
               <Link
                 to="/agentdashboard/loans"
                 className="flex items-center px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
@@ -106,9 +108,9 @@ const Agentsidebar = () => {
                   Loans
                 </span>
               </Link>
-            </li>
+            </li> */}
 
-            <li>
+            {/* <li>
               <Link
                 to="/agentdashboard/loancalculator"
                 className=" w-full flex items-center px-10 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group "
@@ -135,8 +137,8 @@ const Agentsidebar = () => {
                   Loan Calc
                 </span>
               </Link>
-            </li>
-
+            </li> */}
+{/* 
             <li>
               <Link
                 to="/agentdashboard/services"
@@ -164,7 +166,8 @@ const Agentsidebar = () => {
                   Services
                 </span>
               </Link>
-            </li>
+            </li> */}
+{/* 
             <li>
               <Link
                 to="/agentdashboard/messages"
@@ -192,8 +195,9 @@ const Agentsidebar = () => {
                   Messages
                 </span>
               </Link>
-            </li>
-            <li>
+            </li> */}
+
+            {/* <li>
               <div
                 to="/settings/editprofile"
                 className="flex items-center  px-10 p-2 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
@@ -227,7 +231,8 @@ const Agentsidebar = () => {
                   Settings
                 </span>
               </div>
-            </li>
+            </li> */}
+
           </ul>
         </div>
       </div>
