@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie";
 import { useSelector } from "react-redux";
 
 const Userregister = () => {
+  const [agentRefferalCode, setAgentRefferalCode] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
@@ -14,28 +15,31 @@ const Userregister = () => {
   const navigate = useNavigate();
   const [agentEmail, setAgentEmail] = useState("");
 
-  // const [cookies, setCookies] = useCookies("agentToken");
-  // console.log(cookies.agentToken);
+  const [cookies, setCookies] = useCookies("adminToken");
+  console.log(cookies.adminToken);
 
-    const [cookies, setCookies] = useCookies("adminToken");
-    console.log(cookies.adminToken);
+  // const listOfAllAgents  = useSelector((store) => store.getallagent.listOfAllAgents);
+  // console.log(listOfAllAgents[0]);
 
-  const [agentRefferalCode, setAgentRefferalCode] = useState("");
-  console.log(agentRefferalCode);
+  // console.log(listOfAllAgents[0]?.[4]?.agentRefferalCode);
 
-  const listOfAllAgents  = useSelector((store) => store.getallagent.listOfAllAgents);
-  console.log(listOfAllAgents[0]);
-  console.log(listOfAllAgents[0]?.[4]?.agentRefferalCode);
+  // const [agentRefferalCode, setAgentRefferalCode] = useState("");
+  // console.log(agentRefferalCode);
 
-  useEffect(() => {
-    if (listOfAllAgents && listOfAllAgents.length > 0) {
-      // console.log(listOfAllAgents[0]?.[2]?.agentRefferalCode);
-      setAgentRefferalCode(listOfAllAgents[0]?.[2]?.agentRefferalCode);
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (listOfAllAgents && listOfAllAgents.length > 0) {
+  //     // console.log(listOfAllAgents[0]?.[2]?.agentRefferalCode);
 
+  //     listOfAllAgents[0]?.map((res) => {
+  //       console.log(res);
+  //       // setAgentRefferalCode(res);
+  //     });
+
+  //   }
+  // }, []);
 
   const addUserInfo = {
+    agentRefferalCode,
     username,
     email,
     phoneNumber,
@@ -44,7 +48,7 @@ const Userregister = () => {
 
   // agentRefferalCode
   // agentEmail backend api is not ready...(static--> agentEmail)
-  
+
   // const [data, setData] = useState(
   //   {
   //     agentEmail: "piyush307hit@gmail.com",
@@ -61,7 +65,7 @@ const Userregister = () => {
       // http://localhost:8080/agent/addUser?agentEmail=piyush307hit@gmail.com
       // change endpoint according to user registration...due
       const response = await axios.post(
-        `http://localhost:8080/admin/addUser?agentRefferalCode=${listOfAllAgents[0].agentRefferalCode}`,
+        `http://localhost:8080/admin/addUser?agentRefferalCode=${agentRefferalCode}`,
         addUserInfo,
         {
           headers: {
@@ -89,24 +93,26 @@ const Userregister = () => {
 
         <form>
           <div className="mt-8 grid lg:grid-cols-2 gap-4">
+          
             {/* <div>
               <label
                 htmlFor="first-name"
                 className="text-md text-gray-700 block mb-1 font-mono font-bold"
               >
-               First Name
+                AgentRefferalCode
               </label>
               <input
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
+                value={agentRefferalCode}
+                onChange={(e) => setAgentRefferalCode(e.target.value)}
                 type="first-name"
                 name="first-name"
                 id="first-name"
                 className="bg-gray-100 border border-gray-200 rounded py-1 px-3 block focus:ring-blue-500 focus:border-blue-500 text-gray-700 w-full"
-                placeholder="Enter first name"
+                placeholder="Enter Agent Refferal Code"
               />
-            </div>
-            <div>
+            </div> */}
+
+            {/* <div>
               <label
                 htmlFor="last-name"
                 className="text-md text-gray-700 block mb-1 font-mono font-bold"
@@ -123,6 +129,7 @@ const Userregister = () => {
                 placeholder="Enter last name"
               />
             </div> */}
+
             <div>
               <label
                 htmlFor="username"
@@ -193,38 +200,6 @@ const Userregister = () => {
 };
 
 export default Userregister;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import axios from "axios";
 // import React, { useState } from "react";
