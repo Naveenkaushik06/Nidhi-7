@@ -1,9 +1,13 @@
 import React from "react";
+import Mainsetting from "./Mainsetting";
+
+
 
 const Preferences = () => {
   return (
     <>
-      <div className="bg-white font-mono mx-5 p-5 pb-5">
+    
+      <div className=" mt-32 ml-72 bg-white font-mono mx-5 p-5 pb-5">
         <span className=" font-bold text-xl mt-5">
           Two-factor Authentication
         </span>
@@ -32,7 +36,7 @@ const Preferences = () => {
             type="current_password"
             id=" current_password"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="****"
+            placeholder=""
             required
           />
         </div>
@@ -47,7 +51,7 @@ const Preferences = () => {
             type="new_password"
             id="new_password"
             className="bg-gray-50 border border-gray-300 text-gray-900 text-md rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-1/3 p-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="****"
+            placeholder=""
             required
           />
         </div>

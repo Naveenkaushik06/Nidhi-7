@@ -22,7 +22,11 @@ import GetAllAgent from "./components/admin/GetAllAgent";
 import Adminmenu from "./components/admin/Adminmenu";
 import Admindashboard from "./components/admin/Admindashboard";
 import GetAgent from "./components/admin/GetAgent";
-
+import EditProfile from "./components/settingss/EditProfile";
+import Preferences from "./components/settingss/Preferences";
+import Security from "./components/settingss/Security";
+import AgentCommission from "./components/agent/AgentCommission";
+import GetCommission from "./components/agent/GetCommission";
 
 function AppLayout() {
   return (
@@ -56,20 +60,41 @@ const appRouter = createBrowserRouter([
         children: [
           {
             path: "admindashboard/transactions",
-            element: <Transaction />
+            element: <Transaction />,
           },
           {
             path: "admindashboard/creditcards",
-            element: <Register />
+            element: <Register />,
           },
           {
             path: "admindashboard/mypriviliges",
-            element: <Agentsidebar/>
+            element: <Agentsidebar />,
           },
+
           {
-            path: "settings/editprofile",
-            element: <Mainsetting />
+            path: "admindashboard/setting",
+            element: <Agentsidebar />,
           },
+
+          {
+            path: "settings",
+            element: <Mainsetting />,
+            children: [
+              {
+                path: "/editprofile",
+                element: <EditProfile />,
+              },
+              {
+                path: "/preferences",
+                element: <Preferences />,
+              },
+              {
+                path: "/security",
+                element: <Security />,
+              },
+            ],
+          },
+
           {
             path: "registerform",
             element: <RegisterForm />,
@@ -77,32 +102,29 @@ const appRouter = createBrowserRouter([
 
           {
             path: "userregister",
-            element: <Userregister/>,
+            element: <Userregister />,
           },
-
-
 
           {
             path: "admindashboard/loans",
-            element: <Loans />
+            element: <Loans />,
           },
           {
             path: "admindashboard/transactions",
-            element: <Transaction/>
+            element: <Transaction />,
           },
           {
             path: "admindashboard/calculator",
-            element: <LoanCalculator />
+            element: <LoanCalculator />,
           },
           {
-            path:"admindashboard",
-            element:<Admindashboard />
+            path: "admindashboard",
+            element: <Admindashboard />,
           },
           {
-            path:"getagent",
-            element:<GetAgent />
+            path: "getagent",
+            element: <GetAgent />,
           },
-        
         ],
       },
       {
@@ -118,7 +140,6 @@ const appRouter = createBrowserRouter([
         element: <ForgetForm />,
       },
 
-
       //agent routing
 
       {
@@ -131,7 +152,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/agentdashboard/commission",
-        element: <Agentdashboard />,
+        element: <GetCommission />,
       },
 
       // {
@@ -154,7 +175,7 @@ const appRouter = createBrowserRouter([
       //   path: "/agentdashboard/settings",
       //   element: <Agentdashboard />,
       // },
-      
+
       {
         path: "/agentdashboard/getuser",
         element: <GetUser />,
@@ -165,42 +186,39 @@ const appRouter = createBrowserRouter([
       //   element: <Userregister/>,
       // },
 
-        // user Routing
+      // user Routing
       {
         path: "/userlogin",
-        element: <Userlogin/>,
+        element: <Userlogin />,
       },
       {
         path: "/userdashboard",
-        element: <Userdashboard/>,
+        element: <Userdashboard />,
       },
       {
         path: "/userdashboard/deposit",
-        element: <Userdashboard/>,
+        element: <Userdashboard />,
       },
       {
         path: "/userdashboard/loans",
-        element: <Userdashboard/>,
+        element: <Userdashboard />,
       },
       {
         path: "/userdashboard/loancalculator",
-        element: <Userdashboard/>,
+        element: <Userdashboard />,
       },
       {
         path: "/userdashboard/services",
-        element: <Userdashboard/>,
+        element: <Userdashboard />,
       },
       {
         path: "/userdashboard/messages",
-        element: <Userdashboard/>,
+        element: <Userdashboard />,
       },
       {
         path: "/userdashboard/settings",
-        element: <Userdashboard/>,
+        element: <Userdashboard />,
       },
-     
-     
-      
     ],
   },
 ]);

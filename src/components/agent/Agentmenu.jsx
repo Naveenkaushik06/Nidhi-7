@@ -67,7 +67,7 @@ const Agentmenu = () => {
         <div className="flex gap-3 ">
 
           <Link to="/agentdashboard/getuser">
-          <div className="   bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
+          <div className=" h-[114px]  bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
             <div className=" p-2 flex flex-row ">
               <span className="w-full font-bold ">Total User</span>
               <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
@@ -88,8 +88,8 @@ const Agentmenu = () => {
           </div>
           </Link>
 
-          <div className="bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
-            <div className=" p-2 flex flex-row">
+          <div className="   bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700  w-52 ">
+            <div className=" p-2 flex flex-row ">
               <span className="w-full font-bold ">Total User</span>
               <div className="w-full ml-5 bg-green-400 rounded-lg flex flex-row">
                 <div>
@@ -103,7 +103,7 @@ const Agentmenu = () => {
               </div>
             </div>
             <div className="flex p-2 flex-col ">
-              <span className="text-2xl font-bold"> 200</span>
+              <span className="text-2xl font-bold">{totalUser}</span>
               <span className="font-bold">user</span>
             </div>
           </div>

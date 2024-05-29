@@ -1,9 +1,11 @@
 import React from "react";
+import Mainsetting from "./Mainsetting";
 
 const Security = () => {
   return (
     <> 
-    <div className="font-mono p-3 rounded-lg bg-white mx-5  ">
+ 
+    <div className=" mt-32 ml-72 font-mono p-3 rounded-lg bg-white mx-5  ">
       <div className="flex mx-5 mt-5">
         <div className="w-full">
           <label

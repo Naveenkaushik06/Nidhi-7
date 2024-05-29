@@ -13,8 +13,8 @@ const Agentheader = () => {
       case "/agentdashboard":
         setSelectedItem("Dashboard");
         break;
-      case "/agentdashboard/deposit":
-        setSelectedItem("Deposit");
+      case "/agentdashboard/commission":
+        setSelectedItem("Commission");
         break;
       case "/agentdashboard/loans":
         setSelectedItem("Loans");

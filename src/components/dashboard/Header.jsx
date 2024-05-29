@@ -29,13 +29,26 @@ const Header = () => {
       case "/admindashboard/services":
         setSelectedItem("Services");
         break;
-     
-      case "/admindashboard/setting":
-        setSelectedItem("Setting");
+
+      case "/settings":
+        setSelectedItem("Settings");
         break;
-        case "/admindashboard/calculator":
+
+      case "/admindashboard/calculator":
         setSelectedItem("Loan Calculator");
         break;
+
+        case "/editprofile":
+        setSelectedItem("EditProfile");
+        break;
+
+        case "/preferences":
+          setSelectedItem("Preferences");
+          break;
+
+          case "/security":
+            setSelectedItem("Security");
+            break;
       default:
         setSelectedItem("DashBoard");
         break;
@@ -119,9 +132,6 @@ const Header = () => {
               <div className="p-2 ml-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
                 <Link to="/userregister">Add User</Link>
               </div>
-
-
-
 
               <div className="px-4">
                 <svg
