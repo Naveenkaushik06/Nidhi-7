@@ -18,7 +18,7 @@ const GetAllAgent = () => {
                 <div className="card mb-1 employee-card-detai ">
                   <div className="row g-0 bg-gray-50 mt-2 ml-1 mb-10 mr-10 ">
                     <div className="col-md-8 mt-4 ">
-                      <div className=" p-4 bg-indigo-300 border border-green-400 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                      <div className="w-[450px] h-[230px] p-4 bg-indigo-300 border border-green-400 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                         <h6 className="text-extrabold text-xl font-mono">
                           <b>Name:</b> {data.name}
                         </h6>
