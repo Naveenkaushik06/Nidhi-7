@@ -7,13 +7,13 @@ import { useCookies } from "react-cookie";
 import { useSelector } from "react-redux";
 
 const Userregister = () => {
-  const [agentRefferalCode, setAgentRefferalCode] = useState("");
+  // const [agentRefferalCode, setAgentRefferalCode] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [agentEmail, setAgentEmail] = useState("");
+  // const [agentEmail, setAgentEmail] = useState("");
 
   const [cookies, setCookies] = useCookies("adminToken");
   console.log(cookies.adminToken);
@@ -39,33 +39,35 @@ const Userregister = () => {
   // }, []);
 
   const addUserInfo = {
-    agentRefferalCode,
     username,
     email,
     phoneNumber,
   };
   console.log(addUserInfo);
 
-  // agentRefferalCode
-  // agentEmail backend api is not ready...(static--> agentEmail)
-
+  
+  // adminEmail backend api is not ready...
   // const [data, setData] = useState(
   //   {
-  //     agentEmail: "piyush307hit@gmail.com",
+  //     adminEmail: "naveenkaushik0612@gmail.com",
   //   },
-  //   {
-  //     agentEmail: "aserajbrm01@gmail.com",
-  //   }
   // );
+  // console.log(data);
+
+
+      // ... ?adminEmail=${data.adminEmail}
+      // addUser?agentRefferalCode=${agentRefferalCode}
+      // http://localhost:8080/agent/addUser?agentEmail=piyush307hit@gmail.com
+      // change endpoint according to user registration...due
 
   // http://localhost:8080/admin/addAgent
   // API call to post Agent-Details
+  
   const handleSubmit = async () => {
     try {
-      // http://localhost:8080/agent/addUser?agentEmail=piyush307hit@gmail.com
-      // change endpoint according to user registration...due
+      
       const response = await axios.post(
-        `http://localhost:8080/admin/addUser?agentRefferalCode=${agentRefferalCode}`,
+        `http://localhost:8080/admin/addUser`,
         addUserInfo,
         {
           headers: {

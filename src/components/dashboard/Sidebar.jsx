@@ -231,7 +231,7 @@ const Sidebar = () => {
             
             <li>
               <Link
-                to="/settings"
+                to="/admindashboard/settings"
                 className="flex items-center  px-5 p-1 text-gray-900 rounded-lg dark:text-white hover:bg-indigo-600 dark:hover:bg-gray-700 group"
               >
                 <svg

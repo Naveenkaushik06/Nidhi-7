@@ -77,19 +77,19 @@ const appRouter = createBrowserRouter([
           },
 
           {
-            path: "settings",
+            path: "admindashboard/settings",
             element: <Mainsetting />,
             children: [
               {
-                path: "/editprofile",
+                path: "editprofile",
                 element: <EditProfile />,
               },
               {
-                path: "/preferences",
+                path: "preferences",
                 element: <Preferences />,
               },
               {
-                path: "/security",
+                path: "security",
                 element: <Security />,
               },
             ],
