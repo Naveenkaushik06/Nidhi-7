@@ -1,15 +1,12 @@
 import React from 'react'
-import Header from '../dashboard/Header'
-
-import Sidebar from '../dashboard/Sidebar'
-import Adminmenu from './Adminmenu'
+import Mainsetting from '../settingss/Mainsetting'
+import { Outlet } from 'react-router-dom'
 
 const Admindashboard = () => {
   return (
     <div>
-      <Header/>
-      <Sidebar/>
-      <Adminmenu/>
+      <Mainsetting/>
+      <Outlet/>
     </div>
   )
 }

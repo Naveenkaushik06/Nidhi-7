@@ -30,7 +30,7 @@ const Header = () => {
         setSelectedItem("Services");
         break;
 
-      case "/settings":
+      case "/admindashboard/settings":
         setSelectedItem("Settings");
         break;
 
@@ -38,15 +38,15 @@ const Header = () => {
         setSelectedItem("Loan Calculator");
         break;
 
-        case "/editprofile":
-        setSelectedItem("EditProfile");
+        case "/admindashboard/settings/editprofile":
+        setSelectedItem("Edit Profile");
         break;
 
-        case "/preferences":
+        case "/admindashboard/settings/preferences":
           setSelectedItem("Preferences");
           break;
 
-          case "/security":
+          case "/admindashboard/settings/security":
             setSelectedItem("Security");
             break;
       default:

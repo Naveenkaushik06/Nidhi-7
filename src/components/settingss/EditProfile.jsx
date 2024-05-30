@@ -1,11 +1,9 @@
 import React from "react";
 
-
-
 const EditProfile = () => {
   return (
     <> 
-      <div className="  w-auto container font-mono  mx-3 bg-white rounded-xl   flex ">
+      <div className="w-auto container font-mono ml-56 p-2 bg-white rounded-xl flex ">
         <div className=" mx-5 mt-8 p-2">
           <button
             type="button"

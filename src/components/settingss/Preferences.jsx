@@ -1,13 +1,9 @@
 import React from "react";
-import Mainsetting from "./Mainsetting";
-
-
 
 const Preferences = () => {
   return (
     <>
-    
-      <div className=" mt-32 ml-72 bg-white font-mono mx-5 p-5 pb-5">
+      <div className="mt-6 ml-72 bg-white font-mono mx-5 p-2 pb-5">
         <span className=" font-bold text-xl mt-5">
           Two-factor Authentication
         </span>

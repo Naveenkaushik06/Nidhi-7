@@ -4,7 +4,6 @@ import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
-import Mainsetting from "./components/settingss/Mainsetting";
 import LoanCalculator from "./components/dashboard/LoanCalculator/LoanCalculator";
 import RegisterForm from "./components/agent/RegisterForm";
 import LoginForm from "./components/agent/LoginForm";
@@ -17,12 +16,14 @@ import Userdashboard from "./components/user/Userdashboard";
 import Userregister from "./components/agent/Userregister";
 import Userlogin from "./components/user/Userlogin";
 import GetUser from "./components/agent/GetUser";
-import Admindashboard from "./components/admin/Admindashboard";
 import GetAgent from "./components/admin/GetAgent";
+import Admindashboard from "./components/admin/Admindashboard";
 import EditProfile from "./components/settingss/EditProfile";
 import Preferences from "./components/settingss/Preferences";
 import Security from "./components/settingss/Security";
 import GetCommission from "./components/agent/GetCommission";
+import Adminmenu from "./components/admin/Adminmenu";
+
 
 function AppLayout() {
   return (
@@ -38,7 +39,7 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
       },
       {
@@ -55,6 +56,10 @@ const appRouter = createBrowserRouter([
         element: <PrivateRoutes />,
         children: [
           {
+            path: "admindashboard",
+            element: <Adminmenu />,
+          },
+          {
             path: "admindashboard/transactions",
             element: <Transaction />,
           },
@@ -68,13 +73,8 @@ const appRouter = createBrowserRouter([
           },
 
           {
-            path: "admindashboard/setting",
-            element: <Agentsidebar />,
-          },
-
-          {
             path: "admindashboard/settings",
-            element: <Mainsetting />,
+            element: <Admindashboard />,
             children: [
               {
                 path: "editprofile",
@@ -91,18 +91,16 @@ const appRouter = createBrowserRouter([
             ],
           },
 
+
           {
             path: "registerform",
             element: <RegisterForm />,
           },
 
-          // {
-          //   path: "userregister",
-          //   element: <Userregister />,
-          // },
-
-
-
+          {
+            path: "userregister",
+            element: <Userregister />,
+          },
 
           {
             path: "admindashboard/loans",
@@ -153,10 +151,6 @@ const appRouter = createBrowserRouter([
         path: "/agentdashboard/commission",
         element: <GetCommission />,
       },
-      {
-        path:"/agentdashboard/userregister",
-        element: <Userregister />
-      },
 
       // {
       //   path: "/agentdashboard/loans",
@@ -183,8 +177,6 @@ const appRouter = createBrowserRouter([
         path: "/agentdashboard/getuser",
         element: <GetUser />,
       },
-     
-
 
       // {
       //   path: "/agentdashboard/userregister",
@@ -224,8 +216,6 @@ const appRouter = createBrowserRouter([
         path: "/userdashboard/settings",
         element: <Userdashboard />,
       },
-
-
     ],
   },
 ]);
