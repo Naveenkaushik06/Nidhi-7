@@ -3,11 +3,11 @@ import { TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { getAllUser } from "../store/getAllUserSlice";
 import { useCookies } from 'react-cookie';
 
 const Agentmenu = () => {
-
   const [error, setError] = useState("");
   const dispatch = useDispatch();
 
@@ -15,6 +15,9 @@ const Agentmenu = () => {
   console.log(cookies.agentToken);
 
   const [totalUser, setTotalUser] = useState(null);
+
+  const listOfAllAgentEmail  = useSelector((store) => store.getallagentemail.listOfAgentDetails);
+  console.log(listOfAllAgentEmail[0].email);
 
 
   // agentEmail backend api is not ready...(static--> agentEmail)
@@ -28,7 +31,17 @@ const Agentmenu = () => {
       username: "seraj",
       email: "aserajbrm01@gmail.com",
       phoneNumber: "9572413653",
-    }
+    },
+    {
+      username: "manisha",
+      email: "Choudharymanisha38566@gmail.com",
+      phoneNumber: "9572413609",
+    },
+    {
+      username: "manisha",
+      email: "Choudharymanisha38566@gmail.com",
+      phoneNumber: "9572413609",
+    },
   );
 
   // http://localhost:8080/agent/getAllUsers?agentEmail=piyush307hit@gmail.com
@@ -36,7 +49,7 @@ const Agentmenu = () => {
   const getCountUsers = async () => {
     try {
       let getAllUserUrl =
-        "http://localhost:8080/agent/getAllUsers?agentEmail=" + data.email;
+        "http://localhost:8080/agent/getAllUsers?agentEmail=" + listOfAllAgentEmail[0]?.email;
       // console.log(getAllUserUrl);
       const response = await axios.get(getAllUserUrl, {
         headers: {

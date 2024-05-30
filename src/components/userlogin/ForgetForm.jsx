@@ -19,12 +19,13 @@ function ForgetForm() {
     email,
     password
   }
-  
+  console.log(forgetAgentInfo);
+
   // http://localhost:8080/agent/updateAgentPassword?agentEmail=piyush307hit@gmail.com&agentPassword=12345
   
   const handleForgetAgentPassword = async () => {
     try {
-      const response = await axios.post(
+      const response = await axios.put(
         "http://localhost:8080/agent/updateAgentPassword",
         forgetAgentInfo,
         {

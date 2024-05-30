@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
+import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { getAgentInfo } from "../store/getAllAgentEmailSlice";
 
 function LoginForm() {
 
@@ -9,6 +11,7 @@ function LoginForm() {
   const [password, setPassword]=useState("");
   const [error, setError]=useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const [cookies , setCookies] = useCookies('agentToken'); 
   console.log(cookies.agentToken);
@@ -35,9 +38,10 @@ function LoginForm() {
         agentLoginInfo
       );
       console.log(response.data);
+     
       setInCookies('agentToken', response.data);
-      // setIsAuthenticated(true);
       navigate("/agentdashboard");  //agentDashboard required page...
+      dispatch(getAgentInfo(response.data))
     } catch (error) {
       console.error("Agent Login failed:", error);
       setError("Invalid username or password");

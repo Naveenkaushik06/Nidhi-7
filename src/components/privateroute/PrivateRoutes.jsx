@@ -56,7 +56,7 @@ const PrivateRoutes = () => {
       console.log(response.data);
       setInCookies('adminToken', response.data);
       setIsAuthenticated(true);
-      navigate("/dashboard");
+      navigate("/admindashboard");
     } catch (error) {
       console.error("Login failed:", error);
       setError("Invalid username or password");

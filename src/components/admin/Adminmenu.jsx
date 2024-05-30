@@ -3,7 +3,6 @@ import { TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-
 import { getAllAgent } from "../store/getAllAgentSlice";
 import { useCookies } from "react-cookie";
 import Dashboard from "../dashboard/Dashboard";
