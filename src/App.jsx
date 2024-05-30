@@ -17,12 +17,15 @@ import Userdashboard from "./components/user/Userdashboard";
 import Userregister from "./components/agent/Userregister";
 import Userlogin from "./components/user/Userlogin";
 import GetUser from "./components/agent/GetUser";
-import Admindashboard from "./components/admin/Admindashboard";
 import GetAgent from "./components/admin/GetAgent";
+import Admindashboard from "./components/admin/Admindashboard";
 import EditProfile from "./components/settingss/EditProfile";
 import Preferences from "./components/settingss/Preferences";
 import Security from "./components/settingss/Security";
 import GetCommission from "./components/agent/GetCommission";
+import Dashboard from "./components/dashboard/Dashboard";
+import Adminmenu from "./components/admin/Adminmenu";
+
 
 function AppLayout() {
   return (
@@ -38,7 +41,7 @@ const appRouter = createBrowserRouter([
     element: <AppLayout />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <Home />,
       },
       {
@@ -55,6 +58,10 @@ const appRouter = createBrowserRouter([
         element: <PrivateRoutes />,
         children: [
           {
+            path: "admindashboard",
+            element: <Adminmenu />,
+          },
+          {
             path: "admindashboard/transactions",
             element: <Transaction />,
           },
@@ -68,13 +75,8 @@ const appRouter = createBrowserRouter([
           },
 
           {
-            path: "admindashboard/setting",
-            element: <Agentsidebar />,
-          },
-
-          {
-            path: "settings",
-            element: <Mainsetting />,
+            path: "admindashboard/settings",
+            element: <Admindashboard />,
             children: [
               {
                 path: "editprofile",
@@ -90,6 +92,7 @@ const appRouter = createBrowserRouter([
               },
             ],
           },
+
 
           {
             path: "registerform",

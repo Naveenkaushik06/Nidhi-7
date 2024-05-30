@@ -1,4 +1,4 @@
-// ./src/components/OpenAccount.js
+
 
 import React, {useState} from "react"
 
@@ -52,4 +52,4 @@ const OpenAccounts = () => {
   )
 }
 
-export default OpenAccounts
+export default OpenAccounts;
