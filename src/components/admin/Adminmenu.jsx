@@ -3,9 +3,10 @@ import { TrendingUp } from "lucide-react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-import { getAllUser } from "../store/getAllUserSlice";
+
 import { getAllAgent } from "../store/getAllAgentSlice";
 import { useCookies } from "react-cookie";
+import Dashboard from "../dashboard/Dashboard";
 
 const Adminmenu = () => {
   const [error, setError] = useState("");
@@ -152,6 +153,7 @@ const Adminmenu = () => {
             
         </div>
       </section>
+      <Dashboard/>
     </div>
   );
 };

@@ -4,7 +4,6 @@ import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
-import Dashboard from "./components/dashboard/Dashboard";
 import Mainsetting from "./components/settingss/Mainsetting";
 import LoanCalculator from "./components/dashboard/LoanCalculator/LoanCalculator";
 import RegisterForm from "./components/agent/RegisterForm";
@@ -18,14 +17,11 @@ import Userdashboard from "./components/user/Userdashboard";
 import Userregister from "./components/agent/Userregister";
 import Userlogin from "./components/user/Userlogin";
 import GetUser from "./components/agent/GetUser";
-import GetAllAgent from "./components/admin/GetAllAgent";
-import Adminmenu from "./components/admin/Adminmenu";
 import Admindashboard from "./components/admin/Admindashboard";
 import GetAgent from "./components/admin/GetAgent";
 import EditProfile from "./components/settingss/EditProfile";
 import Preferences from "./components/settingss/Preferences";
 import Security from "./components/settingss/Security";
-import AgentCommission from "./components/agent/AgentCommission";
 import GetCommission from "./components/agent/GetCommission";
 
 function AppLayout() {
