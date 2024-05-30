@@ -15,8 +15,8 @@ const Userregister = () => {
   const navigate = useNavigate();
   // const [agentEmail, setAgentEmail] = useState("");
 
-  const [cookies, setCookies] = useCookies("adminToken");
-  console.log(cookies.adminToken);
+  const [cookies, setCookies] = useCookies("agentToken");
+  console.log(cookies.agentToken);
 
   // const listOfAllAgents  = useSelector((store) => store.getallagent.listOfAllAgents);
   // console.log(listOfAllAgents[0]);
@@ -65,22 +65,21 @@ const Userregister = () => {
   
   const handleSubmit = async () => {
     try {
-      
       const response = await axios.post(
-        `http://localhost:8080/admin/addUser`,
+        "http://localhost:8080/agent/addUser",
         addUserInfo,
         {
           headers: {
-            Authorization: "Bearer " + cookies.adminToken,
+            Authorization: "Bearer " + cookies.agentToken,
           },
         }
       );
       console.log(response);
       console.log(response.data);
-      navigate("/dashboard");
+      navigate("/agentdashboard");
     } catch (error) {
       console.error("https://github.com/Nittankumar12/Nidhi-Bank", error);
-      setError("Empty Fields");
+      setError("Enter Correct Fields");
     }
   };
 
