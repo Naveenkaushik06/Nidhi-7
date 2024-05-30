@@ -2,7 +2,7 @@ import React from 'react';
 
 const DashboardCards = () => {
   return (
-    <div className='flex h-32 w-[38rem]  gap-3'>
+    <div className='flex h-40 w-[38rem]  gap-3'>
 
     {/* Total Balance */}
     <div className='flex flex-col gap-1 w-48 p-2 bg-blue-500 text-white'>

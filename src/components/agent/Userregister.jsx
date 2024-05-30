@@ -191,7 +191,7 @@ const Userregister = () => {
               type="button"
               className="py-2 px-4 font-mono font-bold bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50"
             >
-              Create Account
+              ADD USER
             </button>
           </div>
         </form>

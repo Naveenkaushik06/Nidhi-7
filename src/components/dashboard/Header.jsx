@@ -57,7 +57,7 @@ const Header = () => {
 
   return (
     <div>
-      <NavLink to="">
+      <NavLink to="#">
         <nav className="fixed  font-serif top-0 z-50 w-full bg-white  shadow-lg dark:bg-gray-800 dark:border-gray-700">
           <div className="px-3  lg:px-5 lg:pl-3">
             <div className="flex items-center justify-between">
@@ -129,9 +129,11 @@ const Header = () => {
                 <Link to="/registerform">Add Agent</Link>
               </div>
 
-              <div className="p-2 ml-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
+
+              {/* <div className="p-2 ml-2 font-semibold  hover:text-white bg-blue-500 border-black rounded-xl">
                 <Link to="/userregister">Add User</Link>
-              </div>
+              </div> */}
+
 
               <div className="px-4">
                 <svg

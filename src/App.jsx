@@ -96,10 +96,13 @@ const appRouter = createBrowserRouter([
             element: <RegisterForm />,
           },
 
-          {
-            path: "userregister",
-            element: <Userregister />,
-          },
+          // {
+          //   path: "userregister",
+          //   element: <Userregister />,
+          // },
+
+
+
 
           {
             path: "admindashboard/loans",
@@ -150,6 +153,10 @@ const appRouter = createBrowserRouter([
         path: "/agentdashboard/commission",
         element: <GetCommission />,
       },
+      {
+        path:"/agentdashboard/userregister",
+        element: <Userregister />
+      },
 
       // {
       //   path: "/agentdashboard/loans",
@@ -176,6 +183,8 @@ const appRouter = createBrowserRouter([
         path: "/agentdashboard/getuser",
         element: <GetUser />,
       },
+     
+
 
       // {
       //   path: "/agentdashboard/userregister",
@@ -215,6 +224,8 @@ const appRouter = createBrowserRouter([
         path: "/userdashboard/settings",
         element: <Userdashboard />,
       },
+
+
     ],
   },
 ]);

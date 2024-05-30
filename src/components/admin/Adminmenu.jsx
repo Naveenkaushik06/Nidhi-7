@@ -73,7 +73,7 @@ const Adminmenu = () => {
 
           <div className=" font-serif p-1 bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700 ">
               <div className=" flex flex-row ">
-                <span className="w-full font-bold  ">  Total User    </span>
+                <span className="w-full font-bold  ">  Total Agent    </span>
                 <div className="w-24 p-[2px]  bg-green-400 rounded-lg flex flex-row">
                   <div>
                     <span className=" text-green-950 ">
@@ -86,8 +86,8 @@ const Adminmenu = () => {
                 </div>
               </div>
               <div className="flex p-2 flex-col ">
-                <span className="text-2xl font-bold">jjjj</span>
-                <span className="font-bold">user</span>
+                <span className="text-2xl font-bold">{totalAgent}</span>
+                <span className="font-bold">agent</span>
               </div>
             </div>
             
