@@ -7,16 +7,16 @@ import { useCookies } from "react-cookie";
 import { useSelector } from "react-redux";
 
 const Userregister = () => {
-  const [agentRefferalCode, setAgentRefferalCode] = useState("");
+  // const [agentRefferalCode, setAgentRefferalCode] = useState("");
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const [agentEmail, setAgentEmail] = useState("");
+  // const [agentEmail, setAgentEmail] = useState("");
 
-  const [cookies, setCookies] = useCookies("adminToken");
-  console.log(cookies.adminToken);
+  const [cookies, setCookies] = useCookies("agentToken");
+  console.log(cookies.agentToken);
 
   // const listOfAllAgents  = useSelector((store) => store.getallagent.listOfAllAgents);
   // console.log(listOfAllAgents[0]);
@@ -39,46 +39,47 @@ const Userregister = () => {
   // }, []);
 
   const addUserInfo = {
-    agentRefferalCode,
     username,
     email,
     phoneNumber,
   };
   console.log(addUserInfo);
 
-  // agentRefferalCode
-  // agentEmail backend api is not ready...(static--> agentEmail)
-
+  
+  // adminEmail backend api is not ready...
   // const [data, setData] = useState(
   //   {
-  //     agentEmail: "piyush307hit@gmail.com",
+  //     adminEmail: "naveenkaushik0612@gmail.com",
   //   },
-  //   {
-  //     agentEmail: "aserajbrm01@gmail.com",
-  //   }
   // );
+  // console.log(data);
+
+
+      // ... ?adminEmail=${data.adminEmail}
+      // addUser?agentRefferalCode=${agentRefferalCode}
+      // http://localhost:8080/agent/addUser?agentEmail=piyush307hit@gmail.com
+      // change endpoint according to user registration...due
 
   // http://localhost:8080/admin/addAgent
   // API call to post Agent-Details
+  
   const handleSubmit = async () => {
     try {
-      // http://localhost:8080/agent/addUser?agentEmail=piyush307hit@gmail.com
-      // change endpoint according to user registration...due
       const response = await axios.post(
-        `http://localhost:8080/admin/addUser?agentRefferalCode=${agentRefferalCode}`,
+        "http://localhost:8080/agent/addUser",
         addUserInfo,
         {
           headers: {
-            Authorization: "Bearer " + cookies.adminToken,
+            Authorization: "Bearer " + cookies.agentToken,
           },
         }
       );
       console.log(response);
       console.log(response.data);
-      navigate("/dashboard");
+      navigate("/agentdashboard");
     } catch (error) {
       console.error("https://github.com/Nittankumar12/Nidhi-Bank", error);
-      setError("Empty Fields");
+      setError("Enter Correct Fields");
     }
   };
 
@@ -189,7 +190,7 @@ const Userregister = () => {
               type="button"
               className="py-2 px-4 font-mono font-bold bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50"
             >
-              Create Account
+              ADD USER
             </button>
           </div>
         </form>

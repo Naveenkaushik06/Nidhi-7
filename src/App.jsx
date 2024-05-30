@@ -4,7 +4,6 @@ import Login from "./components/portallogin/Login";
 import Register from "./components/userlogin/Register";
 import Loans from "./components/loans/Loans";
 import PrivateRoutes from "./components/privateroute/PrivateRoutes";
-import Mainsetting from "./components/settingss/Mainsetting";
 import LoanCalculator from "./components/dashboard/LoanCalculator/LoanCalculator";
 import RegisterForm from "./components/agent/RegisterForm";
 import LoginForm from "./components/agent/LoginForm";
@@ -23,7 +22,6 @@ import EditProfile from "./components/settingss/EditProfile";
 import Preferences from "./components/settingss/Preferences";
 import Security from "./components/settingss/Security";
 import GetCommission from "./components/agent/GetCommission";
-import Dashboard from "./components/dashboard/Dashboard";
 import Adminmenu from "./components/admin/Adminmenu";
 
 

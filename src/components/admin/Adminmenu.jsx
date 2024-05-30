@@ -32,7 +32,7 @@ const Adminmenu = () => {
       const agentsCount = response.data.length;
       // console.log(agentsCount);
       const agentsData = response.data;
-      // console.log(agentsData);
+      console.log(agentsData);
       setTotalAgent(agentsCount);
       dispatch(getAllAgent(agentsData));
       console.log("Agent Count of objects:", agentsCount);
@@ -73,7 +73,7 @@ const Adminmenu = () => {
 
           <div className=" font-serif p-1 bg-gray-300 border border-blue-500 rounded-lg shadow hover:bg-green-400 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-blue-700 ">
               <div className=" flex flex-row ">
-                <span className="w-full font-bold  ">Total Agent</span>
+                <span className="w-full font-bold  ">  Total Agent    </span>
                 <div className="w-24 p-[2px]  bg-green-400 rounded-lg flex flex-row">
                   <div>
                     <span className=" text-green-950 ">

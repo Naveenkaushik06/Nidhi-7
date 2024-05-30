@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import TransactionPDF from "./TransactionPDF";
+import { useCookies } from "react-cookie";
 
 const Transaction = () => {
+  const [cookies, setCookies] = useCookies("userToken");
+  console.log(cookies.userToken);
+
   const maskAccountNumber = (accountNumber) => {
     if (accountNumber.length === 11) {
       const firstFourDigits = accountNumber.substring(0, 4);
@@ -19,6 +23,7 @@ const Transaction = () => {
   const handleTimeFrameChange = (timeFrame) => {
     setSelectedTimeFrame(timeFrame);
   };
+
  const url = // transaction api
   useEffect(() => {
     const fetchTransactionData = async (url) => {
